@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"> </script>
+    <style>
+        .table {
+            width: 30%;
+        }
+        .container{
+            width: 100%;
+            height: 100%;
+            background: beige;
+            border: 1px solid black;
+            text-align: center;
+        }
+        div {
+            margin-top: 10px;
+        }
+       .container2{
+           width: 20%;
+           height: 100%;
+           background: mistyrose;
+           border: 1px solid black;
+           padding-left: 20px;
+       }
+       .banggia{
+           width: 30%;
+       }
+        .can2div {
+            display: flex;
+        }
+        label {
+            float: left;
+        }
+
+    </style>
+</head>
+<body>
+<div class="can2div">
+<div class="banggia">
+    <table class="table" >
+        <tr>
+            <th scope="col">Loại Phòng</th>
+            <th scope="col">Giá tiền</th>
+        </tr>
+        <tr>
+            <th scope="row">Villa</th>
+            <td>500</td>
+        </tr><tr>
+        <th scope="row">House</th>
+        <td>300</td>
+    </tr><tr>
+        <th scope="row">Room</th>
+        <td>100</td>
+    </tr>
+    </table>
+</div>
+<div class="bground">
+<form class="container">
+    <div id="inputCustomer" >
+            <div><label for="name" >Họ và Tên</label> <input id="name" type="text" name="name" > </div>
+            <div><label for="cmnd">Số CMND</label> <input id="cmnd" type="text" name="cmnd"> </div>
+            <div><label for="birthDate">Ngày Sinh</label><input id="birthDate" type="date" name="birthDate"> </div>
+            <div><label for="email">Email</label><input id="email" type="text" name="email"> </div>
+            <div><label for="address">Địa chỉ</label><input id="address" type="text" name="address"></div>
+            <div><label for="customer">Loại Customer</label>
+                <select id="customer">
+                    <option>Diamond</option>
+                    <option>Platinum</option>
+                    <option>Gold</option>
+                    <option>Silver</option>
+                    <option>Member</option>
+                </select>
+            </div>
+
+            <div><label for="discount">Giảm giá</label><input id="discount" type="text" name="discount"> <br></div>
+            <div><label for="amount">Số lượng đi kèm</label> <input id="amount" type="text" name="amount"> <br></div>
+            <div><label for="rentDays">Số ngày thuê</label><input id="rentDays" type="text" name="rentDays"> <br></div>
+            <div ><label for="service">Loại Dịch vụ</label>
+                <select id="service">
+                    <option value="Villa">Villa</option>
+                    <option value="House">House</option>
+                    <option value="Room">Room</option>
+                </select>
+            </div>
+            <div ><label for="room">Loại Phòng thuê</label>
+                    <select id="room">
+                        <option value="Vip">Vip</option>
+                        <option value="Business">Business</option>
+                        <option value="Normal">Normal</option>
+                    </select>
+                </div>
+            <div><input type="button" value="Đặt Phòng" onclick="input()"></div>
+    </div>
+</form>
+</div></div>
+<br>
+<div>
+<table class="table">
+    <tr>
+        <th>Tên khách hàng</th>
+        <th>CMND</th>
+        <th>Email</th>
+        <th>Ngày sinh</th>
+        <th>Địa Chỉ</th>
+        <th>Loại khách hàng</th>
+        <th>Giảm giá</th>
+        <th>Số lượng</th>
+        <th>Ngày thuê</th>
+        <th>Loại dịch vụ</th>
+        <th>Loại phòng</th>
+        <th>Tổng Chi phí</th>
+    </tr>
+    <tr>
+        <td id="displayName">Trần Minh Chiến</td>
+        <td id="displayCmnd">044098xxxxxx</td>
+        <td id="displayEmail">Chien@gmail.com</td>
+        <td id="displayBirthDate">1/1/2000</td>
+        <td id="displayAddress">Nguyễn Tất Thành - Đà Nẵng</td>
+        <td id="displayCustomer">Diamond</td>
+        <td id="displayDiscount">100</td>
+        <td id="displayAmount">10</td>
+        <td id="displayRentDays">10</td>
+        <td id="displayService">Villa</td>
+        <td id="displayRoom">Vip</td>
+        <td id="displayCost"></td>
+    </tr>
+</table>
+    <input type="button" value="edit" onclick="edit()">
+</div>
+<script src="Request_1_JS.js"></script>
+</body>
+</html>

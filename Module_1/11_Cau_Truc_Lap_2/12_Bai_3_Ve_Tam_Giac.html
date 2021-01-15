@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bài 3:</title>
+</head>
+
+<body>
+<p>Bài 3:In tam giác vuông.</p>
+<h2 id="hinh1"></h2>
+<h2 id="hinh2"></h2>
+<h2 id="hinh3"></h2>
+<h2 id="hinh4"></h2>
+<script>
+    let hinh1 = document.getElementById("hinh1");
+    let hinh2 = document.getElementById("hinh2");
+    let hinh3 = document.getElementById("hinh3");
+    let hinh4 = document.getElementById("hinh4");
+
+    function display1() {
+        let triangle = '';
+        for (let i=1; i <= 5;i++) {
+            for (let j = 1; j <= i; j++) {
+                triangle += "*"
+            }
+            triangle += "<br/>";
+        }
+        hinh1.innerHTML = triangle;
+    }
+
+    function display2() {
+        let triangle = '';
+        for (let i=5; i > 0;i--) {
+            for (let j = 1; j <= i; j++) {
+                triangle += "*"
+            }
+            triangle += "<br/>";
+        }
+        hinh2.innerHTML = triangle;
+    }
+    function display3() {
+        let row = "";
+        for (let i = 1; i <= 5; i++) {
+            for (let j = 1; j <= (5 - i); j++) {
+                row += "&nbsp&nbsp;";
+            }
+            for (let k = 1; k <= i; k++) {
+                row += '*';
+            }
+            row +="<br/>"
+            hinh3.innerHTML = row;
+        }
+    }
+    function display4() {
+        let row = "";
+        for (let i = 0; i <= 5; i++) {
+            for (let j = 1; j <= i ; j++ ) {
+                row += "&nbsp&nbsp;";
+            }
+            for (let j = 5; j > i; j--) {
+                row += "*";
+            }
+            row +="<br/>";
+        }
+        hinh4.innerHTML = row;
+    }
+
+
+    display1();
+    display2();
+    display3();
+    display4();
+
+</script>
+</body>
+
+</html>

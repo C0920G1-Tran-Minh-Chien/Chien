@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+        form {
+            margin: 50px;
+        }
+        button {
+            margin-left: 30px ;
+        }
+    </style>
+</head>
+<body>
+<div>
+<form>
+        <h3>Amount</h3>
+        <input type="number" name="amount" id="amount">
+</form>
+<form>
+        <h3>From Currency</h3>
+        <select id="fromCurrency">
+            <option value="VietNam">VietNam</option>
+            <option value="USD">USD</option>
+        </select>
+</form>
+<form>
+        <h3>To Currency</h3>
+        <select id="toCurrency">
+            <option value="USD">USD</option>
+            <option value="VietNam">VietNam</option>
+        </select>
+    <button id="click" onclick="doiTien()">Convert</button>
+</form>
+</div>
+</body>
+</html>
+<script src="7_BT_Ung_Dung_Doi_Tien_Te_JS.js"></script>

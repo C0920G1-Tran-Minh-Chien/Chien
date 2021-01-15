@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>JS Bin</title>
+    <style>
+        body {padding-top:50px}
+    </style>
+</head>
+
+<body>
+<input type="text" id="txtValue"/>
+<input type="button" id="btnAdd" value="Add" onclick="add_element_to_array();"/>
+<div id="result"></div>
+</body>
+<script>
+    let x = 0;
+    let array = Array();
+    function add_element_to_array() {
+        //Thêm phần tử vào mảng
+        array[x] = document.getElementById("txtValue").value;
+        x++;
+        document.getElementById("txtValue").value = "";
+        // Hiển thị phần tử mới nhập vào
+        let e = "<hr/>";
+        for (let i = 0; i < array.length; i++) {
+            e += "Element " + i + " = " + array[i] + "<br/>";
+        }
+        document.getElementById("result").innerHTML = e;
+    }
+</script>
+</html>

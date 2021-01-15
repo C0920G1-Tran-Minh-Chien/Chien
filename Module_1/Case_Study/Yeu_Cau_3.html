@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yêu cầu 3</title>
+</head>
+<body>
+
+</body>
+<script>
+    let name;
+    let cmnd;
+    let birthday;
+    let email;
+    let address;
+    let typeService;
+    let typeRoom;
+    let typeCustomer;
+    let discount;
+    let amount;
+    let rentDays;
+    let totalPay;
+    let check = false;
+    //Nhập thông tin.
+    //Kiểm tra tên
+    let tempName = "";
+    name = prompt('Nhập tên: ');
+    name = name.trim().toLowerCase();
+    for (let i = 0; i < name.length; i++){
+        if (name.charAt(i) === " " && name.charAt(i + 1)=== " ") {
+            continue;
+        }
+        if (i === 0 || name.charAt(i-1) === " "){
+            tempName += name.charAt(i).toUpperCase();
+            continue;
+        }
+        tempName += name.charAt(i);
+    }
+    name = tempName;
+    //Kiểm tra chứng minh nhân dân
+    do {
+        cmnd = prompt('Nhập cmnd: ');
+        if (!isNaN(cmnd)){
+            cmnd = Number.parseFloat(cmnd);
+        }
+        if (!Number.isInteger(cmnd)){
+            alert("CMND không phải số nguyên")
+            continue;
+        }
+        if (cmnd < 10000000 || cmnd > 99999999){
+            alert("CMND không đúng định dạng");
+            continue;
+        }
+        check = true;
+    } while (!check)
+    check = false;
+    //Nhập ngày sinh
+    birthday = prompt('Nhập ngày sinh: ');
+    //Kiểm tra email
+    do {
+        let countAt = 0;
+        let countDoc = 0;
+        email = prompt('Nhập email: ');
+        for (let i = 0; i < email.length ; i++){
+            if (email.charAt(i)==="@"){
+                countAt++;
+                for (let j = i+1; j < email.length; j++){
+                    if (email.charAt(j)=== "."){
+                        countDoc++;
+                    }
+                }
+            }
+        }
+        if (countAt !=1 || countDoc < 1){
+            alert("Email nhập không đúng.")
+        } else  {
+            check = true;
+        }
+    } while (!check)
+    address = prompt('Nhập địa chỉ: ');
+    typeService = prompt('Nhập loại dịch vụ: ');
+    typeRoom = prompt('Nhập loại phòng: ');
+    typeCustomer = prompt('Nhập loại Khách hàng: ');
+    discount = prompt('Nhập giảm giá: ');
+    amount = prompt('Nhập số lượng đi kèm: ');
+    rentDays = prompt('Nhập số ngày thuê: ');
+
+
+</script>
+</html>

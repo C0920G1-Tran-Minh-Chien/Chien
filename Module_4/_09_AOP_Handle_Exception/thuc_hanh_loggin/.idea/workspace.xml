@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e3bbb5dd-9b7e-4829-8385-45e5419d9847" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../Module_1/4_Git_HTML/4_GitProject" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Module_1/4_Git_HTML/4_GitProject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_03_data_binding/thuc_hanh/UploadMultiFile/CGDN-Spring-UploadMultiFiles" beforeDir="false" afterPath="$PROJECT_DIR$/../../_03_data_binding/thuc_hanh/UploadMultiFile/CGDN-Spring-UploadMultiFiles" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thuc_hanh_dem_so_loggin/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thuc_hanh_dem_so_loggin/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thuc_hanh_dem_so_loggin/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thuc_hanh_dem_so_loggin/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thuc_hanh_dem_so_loggin/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thuc_hanh_dem_so_loggin/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thuc_hanh_dem_so_loggin/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thuc_hanh_dem_so_loggin/src/main/java/com/codegym/dem_so_loggin/DemSoLogginApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thuc_hanh_dem_so_loggin/src/main/java/com/codegym/dem_so_loggin/controller/CounterController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thuc_hanh_dem_so_loggin/src/main/java/com/codegym/dem_so_loggin/model/MyCounter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thuc_hanh_dem_so_loggin/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thuc_hanh_dem_so_loggin/src/main/resources/templates/views/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thuc_hanh_dem_so_loggin/src/test/java/com/codegym/dem_so_loggin/DemSoLogginApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codegym/loggin/LogginApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codegym/loggin/controller/LogginController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codegym/loggin/model/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/codegym/loggin/LogginApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_10_Session_Cookie/CookieSessionDemo/CookieSession/src/main/java/vn/codegym/controllers/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../_10_Session_Cookie/CookieSessionDemo/CookieSession/src/main/java/vn/codegym/controllers/StudentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_10_Session_Cookie/CookieSessionDemo/CookieSession/src/main/java/vn/codegym/model/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../_10_Session_Cookie/CookieSessionDemo/CookieSession/src/main/java/vn/codegym/model/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_10_Session_Cookie/CookieSessionDemo/CookieSession/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../_10_Session_Cookie/CookieSessionDemo/CookieSession/src/main/resources/application.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="1n2nkUOkwdqzmfCWwDX9TnwRkww" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../_10_Session_Cookie/shopping_cart_Demo/shopping_cart" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RunManager">
+    <configuration name="LogginApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="loggin.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.codegym.loggin.LogginApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e3bbb5dd-9b7e-4829-8385-45e5419d9847" name="Default Changelist" comment="" />
+      <created>1610597195945</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1610597195945</updated>
+      <workItem from="1610597200382" duration="2582000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1610613667428">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1610613667428" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1610614009676">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610614009676" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1610614009676">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1610614009676" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1610614009676">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1610614009676" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1610614009676">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1610614009676" />
+    <state width="1493" height="210" key="GridCell.Tab.1.bottom" timestamp="1610614009676">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610614009676" />
+    <state width="1493" height="210" key="GridCell.Tab.1.center" timestamp="1610614009676">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1610614009676" />
+    <state width="1493" height="210" key="GridCell.Tab.1.left" timestamp="1610614009676">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1610614009676" />
+    <state width="1493" height="210" key="GridCell.Tab.1.right" timestamp="1610614009676">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1610614009676" />
+  </component>
+</project>

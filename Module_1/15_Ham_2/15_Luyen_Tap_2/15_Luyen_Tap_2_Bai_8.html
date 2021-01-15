@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // Bài 8: Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó.
+    function bai8(a) {
+        let b = new Array();
+        for (let j = a.length-1; j >= 0; j--){
+            b += a[j]
+        }document.writeln(b);
+    }
+    let arr = new Array(5);
+    for (let i = 0 ; i < arr.length; i++){
+        arr[i] = parseInt(prompt('Nhập số'));
+    }
+bai8(arr);
+
+</script>
+</html>

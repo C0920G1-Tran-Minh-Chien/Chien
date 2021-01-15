@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" id="game" value="click" onclick="batDau()">
+</body>
+<script>
+// <!--  Bài 1  -->
+//     for (let a = 1; a < 100 ; a++) {
+//         document.writeln(a);
+//         if (a == 99)
+//             alert(a);
+//     }
+
+//    Bài 2: Nhiệt độ hơn 100 báo giảm, dưới 20 báo tăng
+
+//       let  t = parseInt(prompt('Nhập nhiệt độ: '));
+// while (t > 0) {
+//         if (t > 100) {
+//             t = parseInt(prompt('Giảm nhiệt độ'));
+//         } else if (t < 20) {
+//             t = parseInt(prompt('Tăng nhiệt độ'));
+//         }
+// }
+
+//    Bài 3: 20 số fibonacci đầu tiên
+//     let a = 0;
+//     let b = 1;
+//     let c ;
+//     for (let dem = 1; dem < 21 ; dem++){
+//         c = a + b ;
+//         document.writeln(c);
+//         a = b ;
+//         b = c ;
+//     }
+
+//    Bài 4: Số đầu tiên trong dãy fibonacci chia hết cho 5
+//     let a = 0;
+//     let b = 1;
+//     let c  ;
+//     while ( c % 5 !== 0){
+//         c = a + b;
+//         if (c % 5 == 0)
+//             alert(c);
+//         a = b;
+//         b = c;
+//     }
+
+//    Bài 5: Tổng 20 số đầu tien dãy fibonacci
+//     let a = 0;
+//     let b = 1;
+//     let c ;
+//     let sum = 0;
+//     for (let dem = 1; dem < 21 ; dem++){
+//         c = a + b ;
+//         a = b ;
+//         b = c ;
+//         sum += c;
+//     } alert(sum);
+
+//    Bài 6: Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên
+//          let sum7 = 0;
+//          for (let i = 1 ; i <= 30; i++){
+//              sum7 += 7*i;
+//          } alert(sum7);
+
+//      Bài 7: Hãy viết một chương trình in ra các số từ 1 đến 100. Nhưng nếu số chia hết cho 3 thì in ra "Fizz", 5 thì in ra "Buzz" thay vì in ra số đó. Và nếu số đó chia hết cho cả 3 và 5 thì in ra chữ "FizzBuzz".
+//           for (let i =1; i<=100;i++){
+//               if (i % 3 == 0 && i % 5 ==0){
+//                   document.writeln("FizzBuzz" + i +"<br>");
+//               } else if (i % 3 ==0){
+//                   document.writeln("Fizz"+ i +"<br>");
+//               } else if (i % 5 ==0){
+//                   document.writeln("Buzz" + i +"<br>");
+//               }
+//           }
+// Bài 8; Game đoán số:
+function batDau() {
+    let a = parseInt(prompt("Bạn muốn đoán trong khoảng từ số:"));
+    let b = parseInt(prompt("Đến số."));
+    let c = parseInt(prompt("Bạn đoán số nào trong khoảng" + a + " đến " + b));
+    let d = Math.round(Math.random() * (b-a) + a);
+    for (let i = 3; i > 0; i--) {
+        if (c > d) {
+            c = parseInt(prompt("Số bạn nhập lớn hơn "+ " bạn còn "+i+"Lần nhập"));
+        } else if (c < d) {
+            c = parseInt(prompt("Số bạn nhập bé hơn "+ " bạn còn "+i+"Lần nhập"));
+        } else {
+            alert('Bạn đã đoán đúng');
+            break;
+        }
+    }
+}
+
+</script>
+</html>

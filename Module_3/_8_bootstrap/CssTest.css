@@ -1,0 +1,9 @@
+.bg-primary div img{
+    width: 50px;
+    height: 50px;
+    margin-left: 25px;
+    margin-top: 25px;
+}
+.bg-primary div label{
+    float: right;
+}

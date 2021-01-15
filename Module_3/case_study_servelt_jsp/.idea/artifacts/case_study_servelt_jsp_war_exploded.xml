@@ -1,0 +1,21 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="case_study_servelt_jsp:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/case_study_servelt_jsp_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="case_study_servelt_jsp/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="case_study_servelt_jsp" />
+          <element id="library" level="project" name="bootstrap413" />
+          <element id="library" level="project" name="datatables" />
+          <element id="library" level="project" name="jquery" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="taglibs-standard-impl-1.2.5" />
+          <element id="library" level="project" name="mysql-connector-java-8.0.17" />
+          <element id="library" level="project" name="taglibs-standard-impl-1.2.51" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

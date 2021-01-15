@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- +1 vào số nhập vào khi gọi hàm-->
+    <input type="number" id="input" placeholder="Nhập số cần tăng 1">
+    <input type="button" onclick="bai2()" value="Click">
+    <p id="output">Kết quả</p>
+</body>
+<script>
+    function bai2() {
+        let a = document.getElementById('input').value ;
+        a++
+        document.getElementById('output').innerText = a;
+    }
+</script>
+</html>

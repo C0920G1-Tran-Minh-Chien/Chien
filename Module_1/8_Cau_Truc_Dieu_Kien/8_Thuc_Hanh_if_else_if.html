@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let account = prompt("Nhập tài khoản : ")
+    let passWord;
+    if (account == 'Admin'){
+        passWord = prompt("Nhập mật khẩu: ");
+        if (passWord == 'muNgu') {
+            alert('Welcome!');
+            } else if (passWord == null) {
+                alert('Canceled.');
+                } else {
+                    alert('Wrong password');
+                }
+    } else if (account == null) {
+        alert('Canceled');
+    } else {
+        alert("Nhập Sai");
+    }
+
+</script>

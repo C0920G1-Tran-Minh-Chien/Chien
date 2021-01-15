@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>[Bài tập] Xây dựng lớp mô tả Temperature</title>
+</head>
+<body>
+<p id="result"></p>
+<script>
+    let result = document.getElementById('result');
+    class temperature {
+        constructor (t){
+            this.t = t;
+        }
+        doF (){
+           return  this.t*9/5 + 32;
+        }
+        doK (){
+            return this.t + 273;
+        }
+    }
+    let addTemperature = new temperature(10);
+    result.innerText = addTemperature.t + " độ C = " + addTemperature.doF() + " độ F, và = " + addTemperature.doK() + " độ K."  ;
+
+</script>
+</body>
+</html>

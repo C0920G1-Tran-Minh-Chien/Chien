@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let n ;
+    function check(num) {
+            for (n = 1; n < num ; n++){
+                let dem = 0;
+                for (t = 2 ; t <= Math.sqrt(n) ; t++){
+                    if (n % t === 0){
+                        dem++ ;
+                    }
+                }
+                    if (dem == 0 && n > 1){
+                        document.writeln(n);
+                    }
+            }
+    }
+    let t ;
+    let a = parseInt(prompt('Nhập số kiểm tra'));
+    check(a);
+
+</script>
+</html>

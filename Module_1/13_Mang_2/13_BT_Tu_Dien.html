@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+</head>
+<body>
+    <label for="input">Nhập số muốn chuyển qua tiếng anh(1-10)</label><input type="text" id= "input">
+    <input type="button"  value="Dịch" onclick="translatea()">
+    <label for="output">Kết quả: </label> <span id="output"></span>
+</body>
+<script>
+    let anh = ["one","two","three","four","five","six","seven","eight","nine","ten"];
+    let viet = ["1","2","3","4","5","6","7","8","9","10"];
+    let input = document.getElementById('input');
+    let output = [];
+
+    function translatea() {
+        for ( let i = 0 ; i < anh.length ; i++){
+            if (input.value.indexOf(anh[i]) !== -1 ){
+                // alert(viet[i]);
+                document.getElementById('output').innerText = viet[i];
+                break;
+            }
+            else {
+                document.getElementById('output').innerText = "Không tìm thấy"
+            }
+        }
+    }
+</script>
+</html>

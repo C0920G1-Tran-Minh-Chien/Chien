@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+
+        let n = parseInt(prompt("Nhập số phần tử của mảng( <20)."));
+        while (n > 20 || n < 0) {
+                n = parseInt(prompt("Bạn nhập sai, Nhập lại số phần tử của mảng( <20)."));
+        }
+        let arr = new Array(n);
+        let result = 0;
+        for (let i = 0; i < arr.length ; i++){
+                arr[i] = parseInt(prompt("Nhập mảng số nguyên để kiểm tra: "));
+                if(arr[i] % 3 === 0 && arr[i] % 5 === 0){
+                    result += arr[i];
+            }
+        }
+        console.log(arr );
+        alert("Tổng các số là bội chung của 3 và 5 là: " + result);
+    </script>
+</body>
+</html>

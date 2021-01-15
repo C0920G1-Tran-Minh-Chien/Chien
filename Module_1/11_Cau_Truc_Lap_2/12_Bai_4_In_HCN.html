@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>bai 4</title>
+</head>
+<body>
+<!--<p><b>Bài 4:</b> In hình chữ nhật</p>-->
+<!--<h2 id="result"></h2>-->
+<script>
+    let height = parseInt(prompt("height: "));
+    let width = parseInt(prompt("width: "));;
+    function drawHCN() {
+        for (let i = 0; i<=height; i++) {
+            for ( let j = 0; j<=width; j++) {
+                if ( i == 0 || i == height ) {
+                    document.write("*");
+                } else {
+                    if ( j == 0 || j == width) {
+                        document.write("*");
+                    } else {
+                        document.write("&nbsp&nbsp");
+                    }
+                }
+
+            }
+            document.write("<br>");
+        }
+
+    }
+    drawHCN();
+</script>
+</body>
+</html>

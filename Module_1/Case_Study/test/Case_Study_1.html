@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .table {
+            width: 30%;
+        }
+        .container{
+            width: 100%;
+            height: 100%;
+            background: beige;
+            border: 1px solid black;
+            text-align: center;
+        }
+        div {
+            margin-top: 20px;
+        }
+        .container2{
+            width: 40%;
+            height: 100%;
+            background: mistyrose;
+            border: 1px solid black;
+            padding-left: 20px;
+        }
+        .banggia{
+            width: 30%;
+        }
+        .can2div {
+            display: flex;
+        }
+        label {
+            float: left;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="input" class="can2div">
+        <form class="container2">
+            <div>
+                <label for="name">Họ và Tên</label>
+                <input type="text" id="name">
+                <p id="errorName"></p>
+            </div>
+            <div>
+                <label for="cmnd">Số Cmnd</label>
+                <input type="number" id="cmnd">
+                <p id="errorCmnd"></p>
+            </div>
+            <div>
+                <label for="birthDate">Ngày Sinh</label>
+                <input type="date" id="birthDate">
+                <p id="errorBirthDate"></p>
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input type="text" id="email">
+                <p id="errorEmail"></p>
+            </div>
+            <div>
+                <label for="address">Địa chỉ</label>
+                <input type="text" id="address">
+            </div>
+            <div>
+                <label for="customer">Loại Customer</label>
+                <select id="customer">
+                    <option>Diamond</option>
+                    <option>Platinum</option>
+                    <option>Gold</option>
+                    <option>Silver</option>
+                    <option>Member</option>
+                </select>
+            </div>
+            <div>
+                <label for="discount">Giảm giá</label>
+                <input type="number" id="discount">
+            </div><div>
+                <label for="amount">Số người</label>
+                <input type="number" id="amount">
+            </div><div>
+                <label for="rentDays">Số ngày thuê</label>
+                <input type="number" id="rentDays">
+            </div>
+            <div >
+                <label for="service">Loại Dịch vụ</label>
+                <select id="service">
+                    <option value="Villa">Villa</option>
+                    <option value="House">House</option>
+                    <option value="Room">Room</option>
+                </select>
+            </div>
+            <div >
+                <label for="room">Loại Phòng thuê</label>
+                <select id="room">
+                    <option value="Vip">Vip</option>
+                    <option value="Business">Business</option>
+                    <option value="Normal">Normal</option>
+                </select>
+            </div>
+            <div><input type="button" value="Đặt Phòng" onclick="enter(), add()"></div>
+        </form>
+    </div>
+    <div id="formEdit"></div>
+    <div id="tableProduct"></div>
+    <div>
+        <table class="table">
+            <tr>
+                <th>Tên khách hàng</th>
+                <th>CMND</th>
+                <th>Email</th>
+                <th>Ngày sinh</th>
+                <th>Địa Chỉ</th>
+                <th>Loại khách hàng</th>
+                <th>Giảm giá</th>
+                <th>Số lượng</th>
+                <th>Ngày thuê</th>
+                <th>Loại dịch vụ</th>
+                <th>Loại phòng</th>
+                <th>Tổng Chi phí</th>
+            </tr>
+            <tr>
+                <td id="displayName"></td>
+                <td id="displayCmnd"></td>
+                <td id="displayEmail"></td>
+                <td id="displayBirthDate"></td>
+                <td id="displayAddress">Nguyễn Tất Thành - Đà Nẵng</td>
+                <td id="displayCustomer">Diamond</td>
+                <td id="displayDiscount">100</td>
+                <td id="displayAmount">10</td>
+                <td id="displayRentDays">10</td>
+                <td id="displayService">Villa</td>
+                <td id="displayRoom">Vip</td>
+                <td id="displayCost"></td>
+            </tr>
+        </table>
+        <input type="button" value="edit" onclick="edit()">
+    </div>
+</body>
+</html>
+<script src="Case_Study_JS.js"></script>

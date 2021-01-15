@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị lớn nhất.
+    function bai5(a,b,c) {
+        if (a > b && a > c){
+            alert("a lớn nhất");
+            return a;
+        } else if( b > c ){
+            alert("b lớn nhất");
+            return b;
+        } else {
+            alert("c lớn nhất");
+            return c;
+        }
+    }
+    let x = parseInt(prompt('Nhập a'));
+    let y = parseInt(prompt('Nhập b'));
+    let z = parseInt(prompt('Nhập c'));
+    bai5(x,y,z);
+</script>
+</html>

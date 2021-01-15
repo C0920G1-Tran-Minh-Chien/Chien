@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let name;
+    let cmnd;
+    let birthday;
+    let email;
+    let address;
+    let typeService;
+    let typeRoom;
+    let typeCustomer;
+    let discount;
+    let amount;
+    let rentDays;
+    let totalPay;
+
+    name = prompt('Nhập tên: ');
+    cmnd = prompt('Nhập cmnd: ');
+    birthday = prompt('Nhập ngày sinh: ');
+    email = prompt('Nhập email: ');
+    address = prompt('Nhập địa chỉ: ');
+    typeService = prompt('Nhập loại dịch vụ: ');
+    typeRoom = prompt('Nhập loại phòng: ');
+    typeCustomer = prompt('Nhập loại Khách hàng: ');
+    discount = prompt('Nhập giảm giá: ');
+    amount = prompt('Nhập số lượng đi kèm: ');
+    rentDays = prompt('Nhập số ngày thuê: ');
+    totalPay = 300*rentDays*(1-discount/100);
+
+    alert('name: '+name+
+    'cmnd: '+cmnd+
+    'birthday: '+birthday+
+    'email: ' +email+
+    'address: '+address+
+    'typeService: '+typeService+
+    'typeRoom: '+typeRoom+
+    'typeCustomer: '+typeCustomer+
+    'amount: '+amount+
+    'rentDays: '+rentDays+
+    'totalPay: '+totalPay);
+</script>
+</html>

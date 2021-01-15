@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div.container {
+            background: lightyellow;
+            width: 40%;
+            border: 10px solid cadetblue;
+            margin: auto;
+        }
+        header {
+            padding: 1px;
+            color: white;
+            background-color: darkseagreen;
+        }
+        .mauchu1
+        {
+            color: red;
+        }
+        .mauchu2
+        {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <div class="container">
+        <header><h3 class="mauchu2">ĐĂNG KÝ HỌC VIÊN</h3></header>
+            <table class="mauchu2">
+                <tr>
+                    <td>Họ và tên</td>
+                    <td><input type="text" name="Fullname"></td>
+                </tr>
+                <tr>
+                    <td>Ngày sinh</td>
+                    <td><input type="text" name="Date"></td>
+                </tr>
+                <tr>
+                    <td>Giới tính</td>
+                     <td>
+                        <input type="radio" name="Nam"> Nam
+                         <input type="radio" name="Nữ"> Nữ
+                     </td>
+                </tr>
+                <tr>
+                    <td>Địa chỉ</td>
+                    <td>
+                        <textarea cols="20" rows="3" name="địa chỉ">
+                        </textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Lớp</td>
+                    <td>
+                        <select name="class">
+                            <option value="1">Lớp1</option>
+                            <option value="2">Lớp2</option>
+                            <option value="3">Lớp3</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input type="text" name="email"></td>
+                </tr>
+                <tr>
+                    <td>Điện thoại</td>
+                    <td><input type="text" name="phone"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" name="submit">
+                        <input type="reset" name="reset">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

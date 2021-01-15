@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let x = [-3, 5, 1, 3, 2, 10];
+    let cuoi = x.length - 1;
+    let dau = 0;
+    while (dau < cuoi){
+        let y = x[dau];
+        x[dau] = x[cuoi];
+        x[cuoi] = y;
+        dau++ ;
+        cuoi-- ;
+    } document.write(x);
+</script>
+</html>

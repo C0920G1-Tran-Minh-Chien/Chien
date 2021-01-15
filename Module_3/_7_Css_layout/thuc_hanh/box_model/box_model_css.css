@@ -1,0 +1,12 @@
+.main {
+    margin: 0 auto;
+    border: solid 10px;
+    border-color: #9933cc ;
+    padding: 10px;
+    width: 80%;
+    text-align: center;
+}
+
+p{
+    border: 3px dotted darkred;
+}

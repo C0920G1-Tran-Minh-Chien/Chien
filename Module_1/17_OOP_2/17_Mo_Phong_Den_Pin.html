@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <img src="img/1.jpg" id="image" height="500px" width="900px"> <br>
+    <input type="button" value="Click here" onclick="switchImage();" >
+<h3 id="rs">Tắt</h3>
+</body>
+<script>
+    class SwitchImage {
+        constructor(status) {
+            this.status = status;
+        }
+        switchImage (){
+            this.status = !this.status;
+        }
+    }
+
+    class Image {
+        constructor(button) {
+            this.button = button;
+        }
+        switch () {
+            if (this.button.status === true){
+                document.getElementById('image').src = "img/1.jpg";
+                document.getElementById('rs').innerText = "bật";
+            }
+            else {
+                document.getElementById('image').src = "img/2.jpg";
+                document.getElementById('rs').innerText = "tắt";
+            }
+        }
+    }
+    let switchImage1 = new SwitchImage(false);
+    let image1 = new Image(switchImage1);
+    function switchImage() {
+        switchImage1.switchImage();
+        image1.switch()
+    }
+</script>
+</html>

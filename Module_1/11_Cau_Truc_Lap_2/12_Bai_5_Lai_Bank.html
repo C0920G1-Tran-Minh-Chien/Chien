@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let money = parseFloat(prompt("Nhập số tiền: "));
+    let month = parseFloat(prompt("Số tháng: "));
+    let lai = parseFloat(prompt("lãi suất: "));
+    let laiMonth = 0;
+    for ( let i = month ; i > 0; i--){
+        laiMonth = money*(lai/100)
+        money += laiMonth;
+    } alert(money);
+</script>
+</html>

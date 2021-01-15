@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Số nguyên tố</title>
+</head>
+<body>
+<script>
+    let numbers = parseInt(prompt("Nhập số lượng số nguyên tố: "));
+    while (numbers !== 0) {
+        let count = 0;
+        let n = 2;
+        while (count < numbers) {
+            let dem = 0;
+            for (let i = 1; i <= n; i++) {
+                if (n % i === 0) {
+                    dem++;
+                }
+            }
+            if (dem === 2) {
+                document.writeln(n);
+                count++;
+            }
+            n++;
+        }
+         numbers = parseInt(prompt("Nhập số lượng số nguyên tố: "));
+    //    Nhập lại 0 sẽ in ra kết quả.
+    }
+
+
+</script>
+</body>
+</html>

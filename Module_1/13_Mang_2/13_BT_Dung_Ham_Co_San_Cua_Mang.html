@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+// <!--  Bài 1  -->
+//    let myColor = ["Red", "Green", "White", "Black"];
+//    document.writeln(myColor.join("+"));
+
+//    Bài 2: Chèn - giữa 2 số chẵn
+// var num = window.prompt();
+// var str = num.toString();
+// var result = [str[0]];
+//
+// for(var x=1; x<str.length; x++)
+// {
+//     if((str[x-1]%2 === 0)&&(str[x]%2 === 0))
+//     {
+//         result.push('-', str[x]);
+//     }
+//     else
+//     {
+//         result.push(str[x]);
+//     }
+// }
+// document.writeln(result.join(''));
+
+//    Bài 3: Chuyển chuỗi từ chữ hoa sang thường và ngược lại
+
+    let str = prompt("Nhập chữ muốn test: ")
+    let UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let LOWER = 'abcdefghijklmnopqrstuvwxyz';
+    let result = [];
+
+    for(let x=0; x<str.length; x++)
+    {
+        if(UPPER.indexOf(str[x]) !== -1)
+        {
+            result.push(str[x].toLowerCase());
+        }
+        else if(LOWER.indexOf(str[x]) !== -1)
+        {
+            result.push(str[x].toUpperCase());
+        }
+        else
+        {
+            result.push(str[x]);
+        }
+    }
+    document.writeln(result.join(''));
+</script>
+</html>

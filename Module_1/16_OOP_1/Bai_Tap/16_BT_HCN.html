@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>[Bài tập] Xây dựng lớp mô tả hình chữ nhật</title>
+</head>
+
+<body>
+<canvas id="myCanvas" width="1368px" height="400px" style="border:1px solid #d3d3d3;"></canvas>
+<p id="result"></p>
+<script>
+    let result = document.getElementById('result');
+    class rectangle  {
+        constructor (width, height){
+            this.width = width ;
+            this.height = height;
+        }
+        chuVi (){
+            return  2*(this.width + this.height);
+        }
+        area (){
+            return  this.width*this.height;
+        }
+    }
+    rectangle.prototype.display = function () {
+            let canvas = document.getElementById("myCanvas");
+            let context = canvas.getContext("2d");
+            context.rect(20, 20, this.width, this.height);
+            context.stroke();
+            result.innerHTML = "width = " + this.width + ", height = "+this.height +" Chu Vi = " +addRectangle.chuVi() + " Dien Tich = "+ addRectangle.area();
+        }
+    let addRectangle = new rectangle(250,200);
+    addRectangle.display();
+
+
+</script>
+</body>
+
+</html>

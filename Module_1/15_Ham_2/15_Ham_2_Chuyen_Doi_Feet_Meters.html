@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+   <label>Nhập feet</label> <input type="number" id="inputFeet">
+    <input type="button" onclick="footToMeter()" value="Đổi">
+    <p id="outputFeet">Kết quả</p> <br>  <br>
+
+   <label>Nhập meter</label> <input type="number" id="inputMeter">
+    <input type="button" onclick="meterToFoot()" value="Đổi">
+    <p id="outputMeter">Kết quả</p>
+
+</body>
+<script>
+    function footToMeter(foot) {
+        foot = document.getElementById('inputFeet').value;
+        meter = 0.305 * foot;
+        document.getElementById('outputFeet').innerText = meter;
+    }
+    function meterToFoot(meter) {
+        meter = document.getElementById('inputMeter').value;
+        foot = 3.279 * meter;
+        document.getElementById('outputMeter').innerText = foot;
+    }
+</script>
+</html>

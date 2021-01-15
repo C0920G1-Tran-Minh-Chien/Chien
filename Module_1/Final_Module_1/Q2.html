@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function result(b) {
+            if (b < 48){
+                alert("ĐIểm thi k đủ!")
+            } else if (b % 5 >= 3){
+                b = b - ( b % 5 ) + 5  ;
+                alert(b);
+                return b;
+            } else if (b % 5 < 3) {
+                alert(b);
+                return  b;
+            }
+        }
+
+        let a = parseInt(prompt("Nhập điểm: "));
+        while (a > 100 || a < 0) {
+            a = parseInt(prompt("Nhập lại điểm: "))
+        }
+        result(a);
+    </script>
+</body>
+</html>

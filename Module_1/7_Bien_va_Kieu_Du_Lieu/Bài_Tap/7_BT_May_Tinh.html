@@ -1,0 +1,89 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        form {
+            background: #ccc;
+            margin: 0 auto;
+            width: 300px;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        form table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        form table tr, form table td {
+            border: 1px solid #eee;
+        }
+
+        form table tr:first-child input {
+            height: 50px;
+            padding: 0 10px;
+            font-weight: 700;
+        }
+
+        form table tr:not(:first-child) td {
+            height: 70px;
+        }
+
+        form table tr:not(:first-child) td input {
+            height: 100%;
+        }
+
+        form table input {
+            width: 100%;
+            display: block;
+            border: 0;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+<form name="calculator">
+    <table>
+        <tr>
+            <td colspan="4">
+                <p id="hangTren" style="text-align: center; font-size: 50px">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <input id="hangDuoi" type="text" name="hangDuoi" disabled>
+            </td>
+        </tr>
+        <tr>
+            <td><input id="1" type="button" name="one" value="1" onclick="display('1')"></td>
+            <td><input id="2" type="button" name="two" value="2" onclick="display('2')"></td>
+            <td><input id="3" type="button" name="three" value="3" onclick="display('3')"></td>
+            <td><input id="+" type="button" class="operator" name="plus" value="+" onclick="display('+')"></td>
+        </tr>
+        <tr>
+            <td><input id="4" type="button" name="four" value="4" onclick="display('4')"></td>
+            <td><input id="5" type="button" name="five" value="5" onclick="display('5')"></td>
+            <td><input id="6" type="button" name="six" value="6" onclick="display('6')"></td>
+            <td><input id="-" type="button" class="operator" name="minus" value="-" onclick="display('-')"></td>
+        </tr>
+        <tr>
+            <td><input id="7" type="button" name="seven" value="7" onclick="display('7')"></td>
+            <td><input id="8" type="button" name="eight" value="8" onclick="display('8')"></td>
+            <td><input id="0" type="button" name="nine" value="9" onclick="display('9')"></td>
+            <td><input id="*" type="button" class="operator" name="times" value="*" onclick="display('*')"></td>
+        </tr>
+        <tr>
+            <td><input id="c" type="button" class="operator" name="clear" value="C" onclick="clear1()"></td>
+            <td><input id="zero" type="button" class="operator" name="zero" value="0" onclick="display('0')"></td>
+            <td><input type="button" class="operator" name="bang" value="=" onclick="display('=')"></td>
+            <td><input type="button" class="operator" name="div" value="/" onclick="display('/')"></td>
+        </tr>
+    </table>
+</form>
+<script src="7_BT_May_Tinh_JS.js"></script>
+</body>
+</html>

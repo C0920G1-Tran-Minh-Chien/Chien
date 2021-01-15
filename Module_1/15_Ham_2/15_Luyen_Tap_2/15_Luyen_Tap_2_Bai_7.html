@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // Bài 7: Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó.
+    function bai7(a,b) {
+        let temp;
+        temp = arr[0];
+        arr[0] = arr[1] ;
+        arr[1] = temp;
+    }
+    let arr = new Array(2);
+    for (let i = 0; i < 2; i++ ){
+       arr[i] = parseInt(prompt('Nhập số'));
+    }
+     bai7(arr);
+    document.writeln(arr);
+
+</script>
+</html>

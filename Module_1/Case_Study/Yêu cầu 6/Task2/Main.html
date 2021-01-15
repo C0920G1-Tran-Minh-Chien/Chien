@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="Employee.js"></script>
+</head>
+<body>
+    <script>
+        let regexEmail = /\S+@\S+\.\S+/ ;
+        let regexBirthday = /^\d{2}[./-]\d{2}[./-]\d{4}$/ ;
+        let regexCmnd = /^[\d]{8,8}$/ ;
+        let regexPhone = /^\d+$/ ;
+        let listEmployee = [];
+        function  displayMainMenu() {
+            let choose = parseInt(prompt("1. Thêm mới Nhân viên." +
+            "\n 2. Hiển thị thông tin Nhân viên" +
+            "\n 3. Lương Nhân viên"+
+            "\n 4. Exit"));
+            switch (choose) {
+                case 1: {
+                    addNewEmployee();
+                    break ;
+                }
+                case 2:{
+                    displayInfomation();
+                    break ;
+                }
+                case 3:{
+                    displaySalary();
+                    break;
+                }
+                default: {
+                    alert("Failed") ;
+                }
+            }
+        }
+
+        function displaySalary() {
+            let result = "" ;
+            console.log(listEmployee)
+            for (let i = 0 ; i < listEmployee.length ; i++){
+                result += i + ".Name: " + listEmployee[i].getName() + "\n " ;
+            }
+            let chooseDisplay = parseInt(prompt(result));
+            alert("Lương của nhân viên: " + listEmployee[chooseDisplay].getName() + " là: " + listEmployee[chooseDisplay].getSalary());
+            displayMainMenu();
+        }
+
+        function displayInfomation() {
+            let result = "" ;
+            for (let i = 0 ; i < listEmployee.length ; i++){
+                result += i + ".Name: " + listEmployee[i].getName() + "\n " ;
+            }
+            let chooseDisplay = parseInt(prompt(result));
+            alert("Tên: " + listEmployee[chooseDisplay].getName() + "\n" +
+            "Ngày sinh: " + listEmployee[chooseDisplay].getBirthDay() + "\n" +
+            "Email: " + listEmployee[chooseDisplay].getEmail() + "\n" +
+            "CMND: " + listEmployee[chooseDisplay].getCmnd() + "\n" +
+            "Vị trí: " + listEmployee[chooseDisplay].getLocation() + "\n" +
+            "Trình độ: " + listEmployee[chooseDisplay].getLevel() + "\n" )
+            displayMainMenu();
+        }
+
+        function addNewEmployee() {
+            let checkValid = false ;
+            let name = prompt('Nhập tên: ');
+            let cmnd ;
+            let birthDay ;
+            let email ;
+            let phone ;
+            let employee = new Employee();
+            //Kiểm tra CMND
+            do {
+                cmnd = prompt('Nhập cmnd: ');
+                if (regexCmnd.test(cmnd)){
+                    checkValid = true;
+                } else {
+                    alert("Không hợp lệ CMND");
+                }
+            } while (!checkValid);
+            checkValid = false ;
+            //Kiểm tra ngày sinh
+            do {
+                birthDay = prompt('Nhập ngày sinh: ');
+                if (regexBirthday.test(birthDay)){
+                    checkValid = true ;
+                } else {
+                    alert("Ngày sinh khoonghowpj lệ");
+                }
+            } while (!checkValid)
+            checkValid = false ;
+            //Kiểm tra email
+            do {
+                email = prompt('Nhập email: ');
+                if (regexEmail.test(email)){
+                    checkValid = true;
+                } else {
+                    alert("Email không hợp lệ, vui lòng nhập lại.");
+                }
+            } while (!checkValid)
+            checkValid = false ;
+            //KIểm tra số ngày thuê
+            do {
+                phone = prompt('Nhập số Điện thoại: ');
+                if (regexPhone.test(phone)){
+                    checkValid = true;
+                } else {
+                    alert("Số điện thoại không hợp lệ không hợp lệ");
+                }
+            } while (!checkValid)
+            checkValid = false ;
+            //
+            employee.setName(name);
+            employee.setBirthDay(birthDay);
+            employee.setEmail(email);
+            employee.setCmnd(cmnd);
+            employee.setPhone(phone);
+            employee.setLevel(prompt("Nhập Chức vụ"));
+            employee.setLocation(prompt("Nhập Vị trí"));
+            listEmployee.push(employee);
+            alert("Bạn đã thêm mới nhân viên");
+            displayMainMenu();
+        }
+    displayMainMenu()
+    </script>
+</body>
+</html>

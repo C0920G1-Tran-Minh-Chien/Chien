@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!--Lưu ý chèn js theo thứ tự main cần sử dụng danhsachsinhvien, danhsachsinhvien cần sử dụng sinhvien-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .trSinhVien:hover{
+            background-color: aquamarine;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="logo"></div>
+<div class="container">
+    <h2>Thông tin sinh viên</h2>
+    <form>
+        <div class="form-group">
+            <label for="masv">Mã SV:</label>
+            <input type="text" class="form-control" id="masv"  placeholder="Nhập MaSV" name="MaSV">
+        </div>
+        <div class="form-group">
+            <label for="hoten">Họ tên:</label>
+            <input type="text" class="form-control" id="hoten" placeholder="Nhập Họ tên" name="hoten">
+        </div>
+        <div class="form-group">
+            <label for="cmnd">CMND:</label>
+            <input type="text" class="form-control" id="cmnd" placeholder="Nhập CMND" name="cmnd">
+        </div>
+        <div class="form-group">
+            <label for="sdt">Điện thoại:</label>
+            <input type="text" class="form-control" id="sdt" placeholder="Nhập SDT" name="sdt">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" placeholder="Nhập Email" name="email">
+        </div>
+        <div class="form-group">
+            <label for="Toan">Toán:</label>
+            <input type="number" class="form-control" id="Toan" placeholder="Nhập Toán" name="Toan">
+        </div>
+        <div class="form-group">
+            <label for="Ly">Lý:</label>
+            <input type="number" class="form-control" id="Ly" placeholder="Nhập Lý" name="Ly">
+        </div>
+        <div class="form-group">
+            <label for="Hoa">Hoa:</label>
+            <input type="number" class="form-control" id="Hoa" placeholder="Nhập Hóa" name="Hoa">
+        </div>
+        <button type="button" class="btn btn-success" onclick="ThemSinhVien()">Thêm sinh viên</button>
+        <button type="button" class="btn btn-primary" onclick="LuuThongTin()"> Lưu</button>
+    </form>
+    <div style="float: right;">
+        <button class="btn btn-success" onclick="SetStorage()">Lưu storage</button>
+        <button class="btn btn-primary" onclick="GetStorage()">Lấy storage</button>
+        <button class="btn btn-danger" onclick="XoaSinhVien()">Xóa sinh viên</button>
+    </div>
+</div>
+<!--table bootstrap 4 -->
+<div class="clearfix"></div>
+<br>
+<div class="container">
+    <div class="right">
+        <div class="input-group">
+            <input type="text" id="tukhoa" onkeyup="TimKiemSinhVien()" onchange="TimKiemSinhVien()" class="form-control" placeholder="Nhập vào họ tên ...">
+            <span class="input-group-btn">
+	 			<button class="btn btn-secondary" onclick="TimKiemSinhVien()" type="button">Tìm kiếm</button>
+	 		</span>
+        </div>
+        <br />
+        <div class="alert alert-success" id="ThongBao"></div>
+    </div>
+    <h2>Danh sách sinh viên</h2>
+    <p> </p>
+    <table id="TableSinhVien" class="table" >
+        <thead>
+        <tr>
+            <th></th>
+            <th>MaSV</th>
+            <th>HoTen</th>
+            <th>Email</th>
+            <th>CMND</th>
+            <th>Điện thoại</th>
+            <th>Điểm TB</th>
+            <th>Xếp loại</th>
+        </tr>
+        </thead>
+        <tbody id="tbodySinhVien">
+        <tr>
+            <td></td>
+            <td>giatri cot 1</td>
+            <td>giatri cot 2</td>
+            <td>giatri cot 3</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
+</body>
+<script>
+    var danhSachSinhVien = new DanhSachSinhVien();
+
+    GetStorage();
+
+    var validate = new Validation();
+
+    //Bổ sung thuộc tính
+    SinhVien.prototype.DiemToan = '';
+    SinhVien.prototype.DiemLy ='';
+    SinhVien.prototype.DiemHoa ='';
+    SinhVien.prototype.DTB ='';
+    SinhVien.prototype.Loai ='';
+    //Thêm phương thức
+    SinhVien.prototype.TinhDTB = function (){
+        this.DTB = (Number(this.DiemHoa) + Number(this.DiemLy) + Number(this.DiemHoa)) / 3;
+    }
+    SinhVien.prototype.XepLoai = function(){
+        if(this.DTB<=10 && this.DTB >=8)
+        {
+            this.Loai = "Xếp loại Giỏi";
+        }
+        else if (this.DTB<8 && this.DTB >= 6.5)
+        {
+            this.Loai = "Xếp loại Khá";
+        }
+        else if (this.DTB<6.5 && this.DTB >= 5)
+        {
+            this.Loai = "Xếp loại Trung Bình";
+        }
+        else
+        {
+            this.Loai = "Xếp loại yếu";
+        }
+    }
+
+
+    function DomID(id)
+    {
+        var element = document.getElementById(id);
+        return element;
+    }
+
+    function ThemSinhVien()
+    {
+        //Lấy dữ liệu từ người dùng nhập vào
+        var masv = DomID("masv").value;
+        var hoten = DomID("hoten").value;
+        var cmnd = DomID("cmnd").value;
+        var email = DomID("email").value;
+        var sdt = DomID("sdt").value;
+        var loi = 0;
+        //Kiểm tra validation
+        if(KiemTraDauVaoRong("masv",masv) == true)
+        {
+            loi++;
+        }
+        if(KiemTraDauVaoRong("hoten",hoten) == true)
+        {
+            loi++;
+        }
+        if(KiemTraDauVaoRong("cmnd",cmnd) == true)
+        {
+            loi++;
+        }
+        if(validate.KiemTraEmail(email))
+        {
+            document.getElementById("email").style.borderColor = "green";
+        }
+        else
+        {
+            document.getElementById("email").style.borderColor = "red";
+            loi++;
+        }
+        if(validate.KiemTraSoDT(sdt))
+        {
+            document.getElementById("sdt").style.borderColor = "green";
+        }
+        else
+        {
+            document.getElementById("sdt").style.borderColor = "red";
+            loi++;
+        }
+        if(loi != 0)
+        {
+            return ;
+        }
+        //Thêm sinh viên
+        var sinhvien = new SinhVien(masv,hoten,email,sdt,cmnd);
+        sinhvien.DiemHoa = DomID("Toan").value;
+        sinhvien.DiemLy = DomID("Ly").value;
+        sinhvien.DiemHoa = DomID("Hoa").value;
+        sinhvien.TinhDTB();
+        sinhvien.XepLoai();
+        danhSachSinhVien.ThemSinhVien(sinhvien);
+        CapNhatDanhSachSV(danhSachSinhVien);
+        console.log(danhSachSinhVien);
+    }
+
+
+    function KiemTraDauVaoRong(ID,value)
+    {
+        //Kiểm tra mã sinh viên rổng
+        if(validate.KiemTraRong(value) == true)
+        {
+            DomID(ID).style.borderColor = "red";
+            return true;
+        }
+        else
+        {
+            DomID(ID).style.borderColor = "green";
+            return false;
+        }
+    }
+
+
+    function CapNhatDanhSachSV (DanhSachSinhVien)
+    {
+        var lstTableSV = DomID("tbodySinhVien");
+        lstTableSV.innerHTML = "";
+        for(var i = 0; i <  DanhSachSinhVien.DSSV.length ; i++ )
+        {
+            //Lấy thông tin sinh viên từ trong mảng sinh viên
+            var sv = danhSachSinhVien.DSSV[i];
+            //Tạo thẻ tr
+            var trSinhVien = document.createElement("tr");
+            trSinhVien.id = sv.MaSV;
+            trSinhVien.className = "trSinhVien";
+            trSinhVien.setAttribute("onclick","ChinhSuaSinhVien('"+sv.MaSV+"')");
+            //Tạo các thẻ td và filter dữ liệu sinh viên thứ [i] vào
+            var tdCheckBox = document.createElement('td');
+            var ckbMaSinhVien = document.createElement('input');
+            console.log(ckbMaSinhVien);
+            ckbMaSinhVien.setAttribute("class","ckbMaSV");
+            ckbMaSinhVien.setAttribute("type","checkbox");
+            ckbMaSinhVien.setAttribute("value",sv.MaSV);
+            tdCheckBox.appendChild(ckbMaSinhVien);
+
+            var tdMaSV = TaoTheTD("MaSV",sv.MaSV);
+            var tdHoTen = TaoTheTD("HoTen",sv.HoTen);
+            var tdCMND = TaoTheTD("CMND",sv.CMND);
+            var tdEmail = TaoTheTD("Email",sv.Email);
+            var tdSoDT = TaoTheTD("SoDT",sv.SoDT);
+
+            //Tạo td  DTB và  xếp loại
+            var tdDTB = TaoTheTD("DTB",sv.DTB);
+            var tdXepLoai = TaoTheTD ("XepLoai",sv.Loai);
+            //Append các td vào tr
+            trSinhVien.appendChild(tdCheckBox);
+            trSinhVien.appendChild(tdMaSV);
+            trSinhVien.appendChild(tdHoTen);
+            trSinhVien.appendChild(tdCMND);
+            trSinhVien.appendChild(tdEmail);
+            trSinhVien.appendChild(tdSoDT);
+            trSinhVien.appendChild(tdDTB);
+            trSinhVien.appendChild(tdXepLoai);
+
+            //Append các tr vào tbodySinhVien
+            lstTableSV.appendChild(trSinhVien);
+        }
+
+    }
+
+    function TaoTheTD (className, value)
+    {
+        var td = document.createElement("td");
+        td.claxxssName = className;
+        td.innerHTML = value;
+        return td;
+    }
+
+
+    function SetStorage()
+    {
+        //Chuyển đổi object mảng danh sách sinh viên thành chuỗi json
+        var jsonDanhSachSinhVien = JSON.stringify(danhSachSinhVien.DSSV);
+        //Rồi đem chuỗi json lưu vào storage và đặt tên là DanhSachSV
+        localStorage.setItem("DanhSachSV",jsonDanhSachSinhVien);
+    }
+
+    function GetStorage()
+    {
+        //Lấy ra chuỗi json là mảng danhsachsinhvien thông qua tên DanhSachSV
+        var jsonDanhSachSinhVien = localStorage.getItem("DanhSachSV");
+        var mangDSSV = JSON.parse(jsonDanhSachSinhVien);
+        danhSachSinhVien.DSSV = mangDSSV;
+        CapNhatDanhSachSV(danhSachSinhVien);
+
+    }
+    //Xóa sinh viên
+    function XoaSinhVien()
+    {
+        //Mảng checkbox
+        var lstMaSV = document.getElementsByClassName("ckbMaSV");
+        //Mảng mã sinh viên được chọn
+        var lstMaSVDuocChon = [];
+        for(i = 0 ; i<lstMaSV.length ;i++)
+        {
+            console.log(lstMaSV[i]);
+            if(lstMaSV[i].checked) //Kiểm phần tử checkbox đó có được chọn hay chưa
+            {
+                lstMaSVDuocChon.push(lstMaSV[i].value);
+            }
+        }
+        danhSachSinhVien.XoaSinhVien(lstMaSVDuocChon);
+        CapNhatDanhSachSV(danhSachSinhVien);
+    }
+
+
+    function TimKiemSinhVien()
+    {
+        var tukhoa = DomID("tukhoa").value;
+        var lstDanhSachSinhVienTimKiem = danhSachSinhVien.TimKiemSinhVien(tukhoa);
+        CapNhatDanhSachSV(lstDanhSachSinhVienTimKiem);
+    }
+
+
+
+    function ChinhSuaSinhVien(masv)
+    {
+
+        var sinhvien = danhSachSinhVien.TimSVTheoMa(masv);
+        if(sinhvien!=null)
+        {
+            DomID("masv").value = sinhvien.MaSV;
+            DomID("hoten").value = sinhvien.HoTen;
+            DomID("cmnd").value = sinhvien.CMND;
+            DomID("email").value = sinhvien.Email;
+            DomID("sdt").value = sinhvien.SoDT;
+        }
+
+    }
+
+    function LuuThongTin()
+    {
+        //Lấy dữ liệu từ người dùng nhập vào
+        var masv = DomID("masv").value;
+        var hoten = DomID("hoten").value;
+        var cmnd = DomID("cmnd").value;
+        var email = DomID("email").value;
+        var sdt = DomID("sdt").value;
+        var loi = 0;
+        //Kiểm tra validation
+        if(KiemTraDauVaoRong("masv",masv) == true)
+        {
+            loi++;
+        }
+        if(KiemTraDauVaoRong("hoten",hoten) == true)
+        {
+            loi++;
+        }
+        if(KiemTraDauVaoRong("cmnd",cmnd) == true)
+        {
+            loi++;
+        }
+        if(validate.KiemTraEmail(email))
+        {
+            document.getElementById("email").style.borderColor = "green";
+        }
+        else
+        {
+            document.getElementById("email").style.borderColor = "red";
+            loi++;
+        }
+        if(validate.KiemTraSoDT(sdt))
+        {
+            document.getElementById("sdt").style.borderColor = "green";
+        }
+        else
+        {
+            document.getElementById("sdt").style.borderColor = "red";
+            loi++;
+        }
+        if(loi != 0)
+        {
+            return ;
+        }
+        //Thêm sinh viên
+        var sinhvien = new SinhVien(masv,hoten,email,sdt,cmnd);
+        sinhvien.DiemHoa = DomID("Toan").value;
+        sinhvien.DiemLy = DomID("Ly").value;
+        sinhvien.DiemHoa = DomID("Hoa").value;
+        sinhvien.TinhDTB();
+        sinhvien.XepLoai();
+        danhSachSinhVien.SuaSinhVien(sinhvien);
+        CapNhatDanhSachSV(danhSachSinhVien);
+    }
+//
+    function DanhSachSinhVien ()
+    {
+        this.DSSV = [];
+        this.ThemSinhVien = function (svThem)
+        {
+            this.DSSV.push(svThem);
+        }
+        this.XoaSinhVien = function (lstSVXoa)
+        {
+            for(var i=0;i< lstSVXoa.length ;i++)
+            {
+                for(var j=0; j < this.DSSV.length ; j++ )
+                {
+                    var sinhvien = this.DSSV[j];
+                    if(lstSVXoa[i] == sinhvien.MaSV)
+                    {
+                        this.DSSV.splice(j,1);
+                    }
+                }
+            }
+        }
+        this.SuaSinhVien = function (svCapNhat)
+        {
+            for(var i=0;i<this.DSSV.length;i++)
+            {
+                var svUpdate = this.DSSV[i];
+                if(svCapNhat.MaSV == svUpdate.MaSV)
+                {
+                    svUpdate.HoTen = svCapNhat.HoTen;
+                    svUpdate.Email = svCapNhat.Email;
+                    svUpdate.CMND = svCapNhat.CMND;
+                    svUpdate.SoDT = svCapNhat.SoDT;
+                }
+
+            }
+
+
+        }
+        this.TimKiemSinhVien = function (tukhoa)
+        {
+            //List kết quả tìm kiếm : DanhSachSinhVien
+            var lstKetQuaTimKiem = new DanhSachSinhVien();
+            for(var i=0 ; i< this.DSSV.length ; i++)
+            {
+                var sinhvien = this.DSSV[i];
+                if(sinhvien.HoTen.toLowerCase().trim().search(tukhoa.toLowerCase().trim()) != -1)
+                {
+                    lstKetQuaTimKiem.ThemSinhVien(sinhvien);
+                }
+            }
+            return lstKetQuaTimKiem;
+        }
+        this.TimSVTheoMa = function(masv)
+        {
+            for(var i=0;i<this.DSSV.length;i++)
+            {
+                var sv = this.DSSV[i];
+
+                if(sv.MaSV === masv)
+                {
+                    return sv;
+                }
+            }
+            return null;
+        }
+    }
+//
+    function SinhVien(masv,hoten,email,sodt,cmnd)
+    {
+        this.MaSV = masv;
+        this.HoTen = hoten;
+        this.Email = email;
+        this.SoDT = sodt;
+        this.CMND = cmnd;
+    }
+//
+    function Validation()
+    {
+        this.KiemTraRong = function (value)
+        {
+            if(value.trim() === "")
+            {
+                return true;
+            }
+            return false;
+        }
+        this.KiemTraEmail = function (value) {
+            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(value.toLowerCase());
+        }
+        this.KiemTraSoDT = function (value)
+        {
+            var re = /^\d+$/;
+            if(re.test(value) && value.length >=10)
+            {
+                return true;
+            }
+            return false;
+        }
+
+    }
+</script>
+</html>
