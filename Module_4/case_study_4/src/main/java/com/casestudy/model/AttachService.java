@@ -1,62 +1,70 @@
 package com.casestudy.model;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.List;
 
 @Entity
-@Table(name = "attach_service")
 public class AttachService {
-
     @Id
-    @GeneratedValue
-    private int id;
-
-    private String name;
-    private String cost;
-    private int unit;
-    private String status;
+    private String attach_service_id;
+    private String attach_service_name;
+    private String attach_service_cost;
+    private String attach_service_unit;
+    private String attach_service_status;
 
     @OneToMany(mappedBy = "attachService")
+    private List<ContractDetail> contractDetails;
 
     public AttachService() {
     }
 
-    public int getId() {
-        return id;
+    public String getAttach_service_id() {
+        return attach_service_id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setAttach_service_id(String attach_service_id) {
+        this.attach_service_id = attach_service_id;
     }
 
-    public String getName() {
-        return name;
+    public String getAttach_service_name() {
+        return attach_service_name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setAttach_service_name(String attach_service_name) {
+        this.attach_service_name = attach_service_name;
     }
 
-    public String getCost() {
-        return cost;
+    public String getAttach_service_cost() {
+        return attach_service_cost;
     }
 
-    public void setCost(String cost) {
-        this.cost = cost;
+    public void setAttach_service_cost(String attach_service_cost) {
+        this.attach_service_cost = attach_service_cost;
     }
 
-    public int getUnit() {
-        return unit;
+    public String getAttach_service_unit() {
+        return attach_service_unit;
     }
 
-    public void setUnit(int unit) {
-        this.unit = unit;
+    public void setAttach_service_unit(String attach_service_unit) {
+        this.attach_service_unit = attach_service_unit;
     }
 
-    public String getStatus() {
-        return status;
+    public String getAttach_service_status() {
+        return attach_service_status;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setAttach_service_status(String attach_service_status) {
+        this.attach_service_status = attach_service_status;
+    }
+
+    public List<ContractDetail> getContractDetails() {
+        return contractDetails;
+    }
+
+    public void setContractDetails(List<ContractDetail> contractDetails) {
+        this.contractDetails = contractDetails;
     }
 }

@@ -1,29 +1,26 @@
 package com.casestudy.model;
 
 import javax.persistence.*;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Table(name = "rent_type")
 public class RentType {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
     private double cost;
-
     @OneToMany(mappedBy = "rentType")
-    Set<Service> serviceSet;
+    private List<Service> service;
 
     public RentType() {
     }
 
-    public Set<Service> getServiceSet() {
-        return serviceSet;
-    }
-
-    public void setServiceSet(Set<Service> serviceSet) {
-        this.serviceSet = serviceSet;
+    public RentType(String name, double cost, List<Service> service) {
+        this.name = name;
+        this.cost = cost;
+        this.service = service;
     }
 
     public int getId() {
@@ -50,5 +47,11 @@ public class RentType {
         this.cost = cost;
     }
 
+    public List<Service> getService() {
+        return service;
+    }
 
+    public void setService(List<Service> service) {
+        this.service = service;
+    }
 }

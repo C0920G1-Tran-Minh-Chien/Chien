@@ -2,37 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e3bbb5dd-9b7e-4829-8385-45e5419d9847" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../_11_WebService/thuc_hanh_quan_ly_khach_hang/src/main/java/com/codegym/quan_ly/controller/CustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../_11_WebService/thuc_hanh_quan_ly_khach_hang/src/main/java/com/codegym/quan_ly/model/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../_11_WebService/thuc_hanh_quan_ly_khach_hang/src/main/java/com/codegym/quan_ly/repository/CustomerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../_11_WebService/thuc_hanh_quan_ly_khach_hang/src/main/java/com/codegym/quan_ly/repository/CustomerRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../_11_WebService/thuc_hanh_quan_ly_khach_hang/src/main/java/com/codegym/quan_ly/repository/Repository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../_11_WebService/thuc_hanh_quan_ly_khach_hang/src/main/java/com/codegym/quan_ly/service/CustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../_11_WebService/thuc_hanh_quan_ly_khach_hang/src/main/java/com/codegym/quan_ly/service/CustomerServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../Module_1/4_Git_HTML/4_GitProject" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Module_1/4_Git_HTML/4_GitProject" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../_03_data_binding/thuc_hanh/UploadMultiFile/CGDN-Spring-UploadMultiFiles" beforeDir="false" afterPath="$PROJECT_DIR$/../../_03_data_binding/thuc_hanh/UploadMultiFile/CGDN-Spring-UploadMultiFiles" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../thuc_hanh_dem_so_loggin/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../thuc_hanh_dem_so_loggin/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../thuc_hanh_dem_so_loggin/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../thuc_hanh_dem_so_loggin/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../thuc_hanh_dem_so_loggin/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../thuc_hanh_dem_so_loggin/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../thuc_hanh_dem_so_loggin/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../thuc_hanh_dem_so_loggin/src/main/java/com/codegym/dem_so_loggin/DemSoLogginApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../thuc_hanh_dem_so_loggin/src/main/java/com/codegym/dem_so_loggin/controller/CounterController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../thuc_hanh_dem_so_loggin/src/main/java/com/codegym/dem_so_loggin/model/MyCounter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../thuc_hanh_dem_so_loggin/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../thuc_hanh_dem_so_loggin/src/main/resources/templates/views/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../thuc_hanh_dem_so_loggin/src/test/java/com/codegym/dem_so_loggin/DemSoLogginApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codegym/loggin/LogginApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codegym/loggin/controller/LogginController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codegym/loggin/model/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/codegym/loggin/LogginApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_10_Session_Cookie/CookieSessionDemo/CookieSession/src/main/java/vn/codegym/controllers/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../_10_Session_Cookie/CookieSessionDemo/CookieSession/src/main/java/vn/codegym/controllers/StudentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_10_Session_Cookie/CookieSessionDemo/CookieSession/src/main/java/vn/codegym/model/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../_10_Session_Cookie/CookieSessionDemo/CookieSession/src/main/java/vn/codegym/model/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_10_Session_Cookie/CookieSessionDemo/CookieSession/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../_10_Session_Cookie/CookieSessionDemo/CookieSession/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,6 +77,7 @@
       <option name="presentableId" value="Default" />
       <updated>1610597195945</updated>
       <workItem from="1610597200382" duration="2582000" />
+      <workItem from="1610683532626" duration="5000" />
     </task>
     <servers />
   </component>

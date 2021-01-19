@@ -1,19 +1,25 @@
 package com.casestudy.model;
 
 import javax.persistence.*;
-import java.io.Serializable;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Table(name = "service_type")
 public class ServiceType {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
-
     @OneToMany(mappedBy = "serviceType")
-    Set<Service> serviceSet;
+    private List<Service> service;
+
+    public ServiceType() {
+    }
+
+    public ServiceType(String name, List<Service> service) {
+        this.name = name;
+        this.service = service;
+    }
 
     public int getId() {
         return id;
@@ -31,13 +37,11 @@ public class ServiceType {
         this.name = name;
     }
 
-    public Set<Service> getServiceSet() {
-        return serviceSet;
+    public List<Service> getService() {
+        return service;
     }
 
-    public void setServiceSet(Set<Service> serviceSet) {
-        this.serviceSet = serviceSet;
+    public void setService(List<Service> service) {
+        this.service = service;
     }
-
-
 }
