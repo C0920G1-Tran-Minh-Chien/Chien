@@ -10,7 +10,7 @@ public class ContractDetail {
     @JoinColumn(name = "contract_id" , referencedColumnName = "id" , nullable = false)
     private Contract contract;
     @ManyToOne(cascade = CascadeType.MERGE)
-    @JoinColumn(name = "attach_service_id" , referencedColumnName = "attach_service_id" , nullable = false)
+    @JoinColumn(name = "attach_service_id" , referencedColumnName = "id" , nullable = false)
     private AttachService attachService;
 
     public ContractDetail() {
