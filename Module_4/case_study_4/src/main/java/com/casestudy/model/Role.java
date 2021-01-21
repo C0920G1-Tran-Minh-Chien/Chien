@@ -19,10 +19,6 @@ public class Role {
     public Role() {
     }
 
-    public Role(String name, Set<User> users) {
-        this.name = name;
-        this.users = users;
-    }
 
     public int getId() {
         return id;
