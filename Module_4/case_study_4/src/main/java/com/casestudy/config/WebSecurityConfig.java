@@ -1,5 +1,6 @@
 package com.casestudy.config;
 
+import com.casestudy.service.Impl.employee.MyUserDetailServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -29,18 +30,27 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        http.csrf().disable();
+        http.authorizeRequests().and().exceptionHandling().accessDeniedPage("/403");
+
         http
                 .formLogin()
-                    .defaultSuccessUrl("/student")
+                    .defaultSuccessUrl("/hello")
                     .permitAll()
                 .and()
-                    .authorizeRequests().antMatchers("/student", "/css/bootstrap.css", "/js").permitAll()
-                    .anyRequest().authenticated();
+                    .authorizeRequests().antMatchers( "/","static/*").permitAll()
+                    .antMatchers("/customer/create","/customer/edit/*","/customer/delete/*").hasRole("USER")
+                    .antMatchers("/employee/create","/employee/edit/*","/employee/delete/*").hasRole("ADMIN")
+
+                    .anyRequest().authenticated()
+                .and()
+                .logout().logoutUrl("/logout").logoutSuccessUrl("/");
+
     }
 
 //    public static void main(String[] args) {
 //        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
-//        String pass = bCryptPasswordEncoder.encode("abc");
+//        String pass = bCryptPasswordEncoder.encode("1");
 //        System.out.println(pass);
 //    }
 }

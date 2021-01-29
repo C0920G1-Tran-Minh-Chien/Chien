@@ -14,16 +14,31 @@
         </div>
         <div class="header-right">
             <div class="dropdown show">
-                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="glyphicon glyphicon-search"></span>
-                    Account
+                <a  class="btn btn-secondary dropdown-toggle" href="#" role="button"  id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="glyphicon glyphicon-search" th:text="${#request.userPrincipal.name}"></span>
+
                 </a>
 
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="#">Sign in</a>
-                    <a class="dropdown-item" href="#">Log in</a>
-                    <a class="dropdown-item" href="#">Setting</a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" >
+                    <a class="dropdown-item" th:href=" @{/logout}">Log Out</a>
+<!--                    <a class="dropdown-item" th:href=" @{/login}">Log in</a>-->
+<!--                    <a class="dropdown-item" href="#">Setting</a>-->
                 </div>
+<!--                <div style="float: right">-->
+<!--                    <li class="nav-item dropdown">-->
+<!--                        <a style="color: white" class="nav-link dropdown-toggle" href="#"-->
+<!--                           id="navbarDropdown3"-->
+<!--                           role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"-->
+<!--                           th:text="${#request.userPrincipal.name}"-->
+<!--                        >-->
+<!--                        </a>-->
+<!--                        <div class="dropdown-menu" aria-labelledby="navbarDropdown3">-->
+<!--                            <a class="dropdown-item" th:href="@{/employee/view-info/{name}(name=${#request.userPrincipal.name})}">User Info</a>-->
+<!--                            <div class="dropdown-divider"></div>-->
+<!--                            <a class="dropdown-item" th:href="@{/logout}">Logout</a>-->
+<!--                        </div>-->
+<!--                    </li>-->
+<!--                </div>-->
             </div>
         </div>
     </div>
@@ -49,6 +64,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/contract">Contract</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contractDetail">Contract Detail</a>
                     </li>
                 </ul>
             </div>

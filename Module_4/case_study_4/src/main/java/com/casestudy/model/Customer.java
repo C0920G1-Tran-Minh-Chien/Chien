@@ -1,31 +1,60 @@
 package com.casestudy.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.validation.Errors;
+import org.springframework.validation.Validator;
+
 import javax.persistence.*;
+import javax.validation.constraints.*;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.ZoneId;
+import java.util.Date;
 import java.util.List;
 
 @Entity
 @Table(name = "customer")
-public class Customer {
+public class Customer implements Validator {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+
+    @NotEmpty
     private String name;
-    private String dateOfBirth;
+
+    @DateTimeFormat(pattern = "yyyy-mm-dd")
+    @PastOrPresent
+    private Date dateOfBirth;
+
     private String gender;
+
+    @NotEmpty
+    @Size(min = 9, max = 9)
     private String cmnd;
+
+    @NotEmpty
+    @Size(min = 10, max = 10)
+    @Pattern(regexp = "^0\\d{9}$")
     private String phoneNumb;
+
+    @NotEmpty
+    @Email
     private String email;
+
+    @NotEmpty
     private String address;
+
     @ManyToOne
     @JoinColumn(name = "customer_id")
     private CustomerType customerType;
 
     public Customer() {
     }
+
     @OneToMany(mappedBy = "customer")
     private List<Contract> contracts;
 
-    public Customer(String name, String dateOfBirth, String gender, String cmnd, String phoneNumb, String email, String address, CustomerType customerType) {
+    public Customer(String name, Date dateOfBirth, String gender, String cmnd, String phoneNumb, String email, String address, CustomerType customerType) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.gender = gender;
@@ -52,11 +81,11 @@ public class Customer {
         this.name = name;
     }
 
-    public String getDateOfBirth() {
+    public Date getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
+    public void setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -106,5 +135,27 @@ public class Customer {
 
     public void setCustomerType(CustomerType customerType) {
         this.customerType = customerType;
+    }
+
+    @Override
+    public boolean supports(Class<?> clazz) {
+        return Customer.class.isAssignableFrom(clazz);
+    }
+
+    @Override
+    public void validate(Object target, Errors errors) {
+        Customer customer = (Customer) target;
+        LocalDate today = LocalDate.now();
+        Date birth = customer.getDateOfBirth();
+        if (birth == null) {
+            errors.rejectValue("dateOfBirth", "DateNotNull");
+        } else {
+            LocalDate birthLocal =  birth.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+            if (Period.between(birthLocal, today).getYears()<18) {
+                errors.rejectValue("dateOfBirth", "DateCustomer");
+            }
+        }
+        //        ValidationUtils.rejectIfEmpty(errors, "name", "mess.empty");
+
     }
 }

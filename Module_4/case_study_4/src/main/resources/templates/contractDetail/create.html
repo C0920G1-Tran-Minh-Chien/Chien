@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Contract</title>
+</head>
+<body>
+<div class="container">
+    <!--    <div th:replace="layout :: header"></div>-->
+    <!--    <div th:replace="layout :: nav"></div>-->
+    <div id="content" style="background-color: whitesmoke">
+        <div>
+            <!--            <div class="col-lg-2 bg-light" th:replace="layout :: col2">-->
+            <!--            </div>-->
+            <!--            <div class="col-lg-10 bg-light">-->
+            <div class="form-group col-12" >
+                <form th:action="@{/contractDetail/create}" method="post" th:object="${contractDetail}" novalidate="novalidate" >
+                    <div >
+                        <input type="hidden" th:field="*{contract_detail_id}">
+                    </div>
+
+                    <div>
+                        <div class="form-group ">
+                            <label>Contract:</label>
+                            <select th:field="*{contract}" class="form-control">
+                                <option
+                                        th:each="cusType : ${contractList}"
+                                        th:value="${cusType.id}"
+                                        th:text="${cusType.id}"></option>
+                            </select>
+                        </div>
+                        <div class="form-group ">
+                            <label>Attach Service:</label>
+                            <select th:field="*{attachService}" class="form-control">
+                                <option
+                                        th:each="cusType : ${attachServiceList}"
+                                        th:value="${cusType.id}"
+                                        th:text="${cusType.name}"></option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <a th:href="@{/contractDetail}" class="btn btn-primary">Close</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+

@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 import vn.codegym.thuchanh.model.User;
 
+import java.time.LocalDate;
+
 @Controller
 public class UserController {
 
@@ -28,5 +30,6 @@ public class UserController {
             ModelAndView modelAndView = new ModelAndView("views/result");
             return modelAndView;
         }
+
     }
 }

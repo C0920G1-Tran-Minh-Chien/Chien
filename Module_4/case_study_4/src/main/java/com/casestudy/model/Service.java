@@ -1,24 +1,43 @@
 package com.casestudy.model;
 
+import org.springframework.format.annotation.NumberFormat;
+import org.springframework.validation.Errors;
+
+
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Entity
-public class Service {
+public class Service  {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+
     private String name;
+
     private double area;
+
     private double cost;
+
     private int maxPeople;
+
     private String standardRoom;
+
     private String descriptionOtherConvenience;
+
     private double poolArea;
+
+//    @NotEmpty
+//    @NumberFormat
     private int numFloors;
+
     @ManyToOne
     @JoinColumn(name = "service_type_id")
     private ServiceType serviceType;
+
     @ManyToOne
     @JoinColumn(name = "rent_type_id")
     private RentType rentType;
@@ -129,4 +148,5 @@ public class Service {
     public void setRentType(RentType rentType) {
         this.rentType = rentType;
     }
+
 }

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List Contract</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div class="container-fluid">
+    <div th:replace="layout :: header"></div>
+    <div th:replace="layout :: nav"></div>
+    <div id="content" style="background-color: antiquewhite">
+        <div class="row">
+            <div class="col-lg-2 bg-light" th:replace="layout :: col2">
+            </div>
+            <div class="col-lg-10 bg-light" >
+                <!--                <a href="/customer/create" class="btn btn-outline-primary" id="btnModalCreate">Create Customer</a>-->
+                <a type="button" class="btn btn-outline-success btn-lg" id="btnModalCreate" th:href="@{contract/create}">
+                    Create
+                </a>
+                <form class="form-inline my-2 my-lg-0" th:action="@{/contract}" style="float: right">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="searchNameContract" style="width: 300px">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+                <div id="searchTable">
+                    <table cellspacing="2"  class="table table-hover" >
+                        <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Start Date</th>
+                            <th scope="col">End Date</th>
+                            <th scope="col">Deposit</th>
+                            <th scope="col">Total Pay</th>
+                            <th scope="col">Employee</th>
+                            <th scope="col">Customer</th>
+                            <th scope="col">Service</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="contract : ${contractList}">
+                            <td scope="col" th:text="${contract.id}"></td>
+                            <td scope="col" th:text="${contract.startDate}"></td>
+                            <td scope="col" th:text="${contract.endDate}"></td>
+                            <td scope="col" th:text="${contract.deposit}"></td>
+                            <td scope="col" th:text="${contract.totalMoney}"></td>
+                            <td scope="col" th:text="${contract.employee.name}"></td>
+                            <td scope="col" th:text="${contract.customer.name}"></td>
+                            <td scope="col" th:text="${contract.service.name}"></td>
+                            <td scope="col">
+                                <button class="btn btn-outline-info btn-lg btnModalView" >View</button>
+                                <input type="hidden" th:value="${contract.id}">
+
+                                <button type="button" class="btn btn-outline-warning" id="btnModalEdit"
+                                        th:onclick="'javascript:showEdit(\''+ ${contract.id} + '\');'">Edit</button>
+
+                                <button type="button" class="btn btn-outline-danger" id="btnModalDelete"
+                                        th:onclick="'javascript:showDelete(\''+ ${contract.id} + '\');'">Delete</button>
+
+                            </td>
+                        </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+                <!--                <span th:text="${message}" style="text-align: center; color: blue"></span>-->
+                <!--                <nav aria-label="Page navigation example" style="float: right; margin-right: 25px">-->
+                <!--                    <ul class="pagination">-->
+                <!--                        <li class="page-item"><a class="page-link" th:href="@{/employee(page = 0, searchNameEmployee = ${stringAfterCheck})}">Prevous</a></li>-->
+                <!--                        <th:block th:each="i: ${#numbers.sequence(0, employeeList.totalPages - 1)}">-->
+                <!--                            <li class="page-item">-->
+                <!--                                <a class="page-link" th:href="@{/employee(page=${i},searchNameEmployee=${stringAfterCheck})}" th:text="${i + 1}"></a>-->
+                <!--                            </li>-->
+                <!--                        </th:block>-->
+
+                <!--                        <li class="page-item"><a class="page-link" th:href="@{/employee(page = ${employeeList.totalPages - 1}, searchNameEmployee = ${stringAfterCheck})}">Next</a></li>-->
+                <!--                    </ul>-->
+                <!--                </nav>-->
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Body
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script></script>
+
+<script src="/js/jquery-3.5.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<!--<script>-->
+<!--    $(document).ready(function () {-->
+<!--        $("#btnModalCreate").click(function () {-->
+<!--            $.ajax({-->
+<!--                type: "GET",-->
+<!--                url: "contract/create",-->
+<!--                dataType: "HTML",-->
+<!--                success: function (data) {-->
+<!--                    $(".modal-body").html(data);-->
+<!--                    $("#modelId").modal('show');-->
+<!--                }-->
+<!--            });-->
+<!--        });-->
+<!--    });-->
+<!--</script>-->
+<!--ajax delete modal-->
+<script>
+
+    function showDelete(id) {
+        $.ajax({
+            type: "GET",
+            url: "contract/delete/"+id,
+            dataType: "HTML",
+            success: function (data) {
+                $(".modal-body").html(data);
+                $("#modelId").modal('show');
+            }
+        })
+    }
+    function actionDelete(id){
+        $.ajax({
+            type: "POST",
+            url: "contract/actionDelete/" + id,
+            dataType: "HTML",
+            success: function (data) {
+                let messageDelete = "Delete!!!";
+                setTimeout(function() {
+                    $("#modelId").modal('hide');
+                }, 6000);
+                $("#searchTable").html(data);
+
+                $(".modal-body").html(messageDelete);
+
+                setTimeout(function() {
+                    $("#modelId").modal('show');
+                }, 6000);
+            }
+        })
+    }
+</script>
+<!--Edit-->
+<script>
+    function showEdit(id) {
+        $.ajax({
+            type: "GET",
+            url: "contract/edit/"+id,
+            dataType: "HTML",
+            success: function (data) {
+                $(".modal-body").html(data);
+                $("#modelId").modal('show');
+            }
+        })
+    }
+    function actionEdit(id){
+        $.ajax({
+            type: "POST",
+            url: "contract/update",
+            dataType: "HTML",
+            success: function (data) {
+                let messageDelete = "Delete!!!";
+                setTimeout(function() {
+                    $("#modelId").modal('hide');
+                }, 6000);
+                $("#searchTable").html(data);
+
+                $(".modal-body").html(messageDelete);
+
+                setTimeout(function() {
+                    $("#modelId").modal('show');
+                }, 6000);
+            }
+        })
+    }
+</script>
+<!--ajax View modal-->
+<script>
+    $(document).ready(function () {
+        $(".btnModalView").click(function () {
+            console.log($(this).next());
+            $.ajax({
+                type: "GET",
+                url: "contract/view/" + $(this).next().val(),
+                dataType: "HTML",
+                success: function (data) {
+                    $(".modal-body").html(data);
+                    $("#modelId").modal('show');
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>

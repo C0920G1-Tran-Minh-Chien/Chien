@@ -1,6 +1,8 @@
 package com.casestudy.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Entity
@@ -9,12 +11,21 @@ public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+
+    @NotEmpty
     private String name;
+
+    @NotEmpty
     private String dateOfBirth;
+    @NotEmpty
     private String cmnd;
+    @NotNull
     private double salary;
+    @NotEmpty
     private String phoneNumb;
+    @NotEmpty
     private String email;
+    @NotEmpty
     private String address;
     @ManyToOne
     @JoinColumn(name = "position_id")
@@ -25,27 +36,23 @@ public class Employee {
     @ManyToOne
     @JoinColumn(name = "division_id")
     private Division division;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
     @OneToMany(mappedBy = "employee")
     private List<Contract> contract;
-    private String userName;
 
     public Employee() {
     }
 
-    public Employee(String name, String dateOfBirth, String cmnd, double salary, String phoneNumb, String email, String address,
-                    Position position, Education education, Division division, List<Contract> contract, String userName) {
-        this.name = name;
-        this.dateOfBirth = dateOfBirth;
-        this.cmnd = cmnd;
-        this.salary = salary;
-        this.phoneNumb = phoneNumb;
-        this.email = email;
-        this.address = address;
-        this.position = position;
-        this.education = education;
-        this.division = division;
-        this.contract = contract;
-        this.userName = userName;
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public int getId() {
@@ -144,11 +151,4 @@ public class Employee {
         this.contract = contract;
     }
 
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
 }

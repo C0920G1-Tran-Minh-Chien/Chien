@@ -5,6 +5,7 @@ import javax.persistence.*;
 @Entity
 public class ContractDetail {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private String contract_detail_id;
     @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "contract_id" , referencedColumnName = "id" , nullable = false)

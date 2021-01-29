@@ -6,7 +6,7 @@ import java.util.List;
 @Entity
 public class User {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String username;
     private String password;
@@ -18,15 +18,9 @@ public class User {
             joinColumns = @JoinColumn(name = "user_id"),
                 inverseJoinColumns = @JoinColumn(name = "role_id"))
     private List<Role> roles;
-
+    @OneToMany(mappedBy = "user")
+    private List<Employee> employee;
     public User() {
-    }
-
-    public User(String username, String password, boolean isEnabled, List<Role> roles) {
-        this.username = username;
-        this.password = password;
-        this.isEnabled = isEnabled;
-        this.roles = roles;
     }
 
     public int getId() {
@@ -35,6 +29,14 @@ public class User {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public List<Employee> getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(List<Employee> employee) {
+        this.employee = employee;
     }
 
     public String getUsername() {

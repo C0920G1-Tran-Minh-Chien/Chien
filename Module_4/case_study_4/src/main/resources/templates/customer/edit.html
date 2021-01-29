@@ -3,15 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Edit Customer</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        p {
+            color: red;
+        }
+    </style>
 </head>
 <body>
 <div class="container-fluid">
-<!--    <div th:replace="layout :: header"></div>-->
-<!--    <div th:replace="layout :: nav"></div>-->
+    <div th:replace="layout :: header"></div>
+    <div th:replace="layout :: nav"></div>
     <div id="content" style="background-color: whitesmoke">
         <div class="row">
-<!--            <div class="col-lg-2" th:replace="layout :: col2">-->
+            <div class="col-lg-2" th:replace="layout :: col2">
             </div>
+            <div class="col-lg-10 bg-light">
             <div class="col-12">
                 <form th:action="@{/customer/update}" method="post" th:object="${customer}" novalidate="novalidate">
                     <div class="">
@@ -19,10 +26,12 @@
                         <div class="form-group col-12 ">
                             <label>Name:</label>
                             <input th:field="*{name}" type="text" class="form-control" placeholder="Name customer...">
+                            <p class="text-center" th:errors="*{name}" ></p>
                         </div>
                         <div class="form-group ">
                             <label>Date of birth:</label>
-                            <input th:field="*{dateOfBirth}" type="text" class="form-control" placeholder="Date of birth..."></input>
+                            <input th:field="*{dateOfBirth}" type="date" class="form-control" placeholder="Date of birth..."></input>
+                            <p class="text-center" th:errors="*{dateOfBirth}" ></p>
                         </div>
                     </div>
                     <div class="">
@@ -38,22 +47,27 @@
                         <div class="form-group ">
                             <label>ID Card:</label><br>
                             <input type="text" th:field="*{cmnd}" class="form-control" placeholder="ID Card...">
+                            <p class="text-center" th:errors="*{cmnd}" ></p>
+
                         </div>
                     </div>
                     <div class="">
                         <div class="form-group ">
                             <label>Phone Number:</label>
                             <input th:field="*{phoneNumb}" type="text" class="form-control" placeholder="Phone number...">
+                            <p class="text-center" th:errors="*{phoneNumb}" ></p>
                         </div>
                         <div class="form-group ">
                             <label>Email:</label>
                             <input th:field="*{email}" type="text" class="form-control" placeholder="abc@gmail.com..."></input>
+                            <p class="text-center" th:errors="*{email}" ></p>
                         </div>
                     </div>
                     <div class="">
                         <div class="form-group ">
                             <label>Address:</label>
                             <input th:field="*{address}" type="text" class="form-control" placeholder="Address...">
+                            <p class="text-center" th:errors="*{address}" ></p>
                         </div>
                         <div class="form-group ">
                             <label>Customer Type:</label>
@@ -74,6 +88,13 @@
         </div>
     </div>
 </div>
+<script src="/js/jquery-3.5.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </body>
 </html>
 
