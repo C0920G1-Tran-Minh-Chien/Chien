@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="searchTable">
+<table cellspacing="2"  class="table table-hover" >
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Date Of Birth</th>
+        <th scope="col">CMND</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Email</th>
+        <th scope="col">Address</th>
+        <th scope="col">Position</th>
+        <th scope="col">Education</th>
+        <th scope="col">Division</th>
+        <th scope="col">UserName</th>
+        <th scope="col">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="employee : ${employeeList}">
+        <td scope="col" th:text="${employee.id}"></td>
+        <td scope="col" th:text="${employee.name}"></td>
+        <td scope="col" th:text="${employee.dateOfBirth}"></td>
+        <td scope="col" th:text="${employee.cmnd}"></td>
+        <td scope="col" th:text="${employee.phoneNumb}"></td>
+        <td scope="col" th:text="${employee.email}"></td>
+        <td scope="col" th:text="${employee.address}"></td>
+        <td scope="col" th:text="${employee.position.name}"></td>
+        <td scope="col" th:text="${employee.education.name}"></td>
+        <td scope="col" th:text="${employee.user.username}"></td>
+
+        <td scope="col">
+            <!--                            <a th:href="@{/customer/view/{id}(id=${customer.id})}" class="btn btn-outline-info" >-->
+            <!--                                View-->
+            <!--                            </a>-->
+            <button class="btn btn-outline-info btn-lg btnModalView">View</button>
+            <input type="hidden" th:value="${employee.id}">
+
+            <!--                                <span class="oi oi-plus" title="icon name" aria-hidden="true"></span>                            </a>-->
+            <a th:href="@{/employee/{id}/edit(id=${employee.id})}" class="btn btn-outline-dark">
+                Edit
+            </a>
+            <button type="button" class="btn btn-danger" id="btnModalDelete"
+                    th:onclick="'javascript:showDelete(\''+ ${employee.id} + '\');'">
+                Delete
+            </button>
+            <!--                            <button class="btn btn-outline-danger btn-lg btnModalDelete" id="btnModalDelete">Delete</button>-->
+            <!--                            <input type="hidden" th:value="${customer.id}">-->
+
+            <!--                            <a th:href="@{/customer/{id}/delete(id=${customer.id})}" class="btn btn-outline-danger"-->
+            <!--                               data-toggle="modal" data-target="#modelId" th:onclick="'onDel('+${customer.id}+')'">-->
+            <!--                                Delete-->
+            <!--                            </a>-->
+
+        </td>
+    </tr>
+    </tbody>
+
+</table>
+</div>
+<script>
+    $(document).ready(function () {
+        $("#btnModalCreate").click(function () {
+            $.ajax({
+                type: "GET",
+                url: "employee/create",
+                dataType: "HTML",
+                success: function (data) {
+                    $(".modal-body").html(data);
+                    $("#modelId").modal('show');
+                }
+            });
+        });
+    });
+</script>
+<!--ajax delete modal-->
+<script>
+
+    function showDelete(id) {
+        $.ajax({
+            type: "GET",
+            url: "employee/delete/"+id,
+            dataType: "HTML",
+            success: function (data) {
+                $(".modal-body").html(data);
+                $("#modelId").modal('show');
+            }
+        })
+    }
+    function actionDelete(id){
+        $.ajax({
+            type: "POST",
+            url: "employee/actionDelete/" + id,
+            dataType: "HTML",
+            success: function (data) {
+                var messageDelete = "Delete!!!";
+                $("#modelId").modal('hide');
+                $("#searchTable").html(data);
+                $(".modal-body").html(messageDelete);
+                $("#modelId").modal('show');
+            }
+        })
+    }
+</script>
+
+<!--ajax View modal-->
+<script>
+    $(document).ready(function () {
+        $("#btnModalView").click(function () {
+            console.log($(this).next());
+            $.ajax({
+                type: "GET",
+                url: "employee/view/" + $(this).next().val(),
+                dataType: "HTML",
+                success: function (data) {
+                    $(".modal-body").html(data);
+                    $("#modelId").modal('show');
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>
