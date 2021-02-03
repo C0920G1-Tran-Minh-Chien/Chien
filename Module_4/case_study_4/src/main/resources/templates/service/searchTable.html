@@ -11,44 +11,45 @@
     <tr>
         <th scope="col">ID</th>
         <th scope="col">Name</th>
-        <th scope="col">Date Of Birth</th>
-        <th scope="col">CMND</th>
-        <th scope="col">Phone Number</th>
-        <th scope="col">Email</th>
-        <th scope="col">Address</th>
-        <th scope="col">Position</th>
-        <th scope="col">Education</th>
-        <th scope="col">Division</th>
-        <th scope="col">UserName</th>
+        <th scope="col">Area</th>
+        <th scope="col">Cost</th>
+        <th scope="col">Amount People</th>
+        <th scope="col">Standard</th>
+        <th scope="col">Description Other Convenience</th>
+        <th scope="col">Pool Area</th>
+        <th scope="col">Floors</th>
+        <th scope="col">Service Type</th>
+        <th scope="col">Rent Type</th>
         <th scope="col">Action</th>
     </tr>
     </thead>
     <tbody>
-    <tr th:each="employee : ${employeeList}">
-        <td scope="col" th:text="${employee.id}"></td>
-        <td scope="col" th:text="${employee.name}"></td>
-        <td scope="col" th:text="${employee.dateOfBirth}"></td>
-        <td scope="col" th:text="${employee.cmnd}"></td>
-        <td scope="col" th:text="${employee.phoneNumb}"></td>
-        <td scope="col" th:text="${employee.email}"></td>
-        <td scope="col" th:text="${employee.address}"></td>
-        <td scope="col" th:text="${employee.position.name}"></td>
-        <td scope="col" th:text="${employee.education.name}"></td>
-        <td scope="col" th:text="${employee.user.username}"></td>
+    <tr th:each="service : ${serviceList}">
+        <td scope="col" th:text="${service.id}"></td>
+        <td scope="col" th:text="${service.name}"></td>
+        <td scope="col" th:text="${service.area}"></td>
+        <td scope="col" th:text="${service.cost}"></td>
+        <td scope="col" th:text="${service.maxPeople}"></td>
+        <td scope="col" th:text="${service.standardRoom}"></td>
+        <td scope="col" th:text="${service.descriptionOtherConvenience}"></td>
+        <td scope="col" th:text="${service.poolArea}"></td>
+        <td scope="col" th:text="${service.numFloors}"></td>
+        <td scope="col" th:text="${service.serviceType.name}"></td>
+        <td scope="col" th:text="${service.rentType.name}"></td>
 
         <td scope="col">
             <!--                            <a th:href="@{/customer/view/{id}(id=${customer.id})}" class="btn btn-outline-info" >-->
             <!--                                View-->
             <!--                            </a>-->
             <button class="btn btn-outline-info btn-lg btnModalView">View</button>
-            <input type="hidden" th:value="${employee.id}">
+            <input type="hidden" th:value="${service.id}">
 
             <!--                                <span class="oi oi-plus" title="icon name" aria-hidden="true"></span>                            </a>-->
-            <a th:href="@{/employee/{id}/edit(id=${employee.id})}" class="btn btn-outline-dark">
+            <a th:href="@{/service/{id}/edit(id=${service.id})}" class="btn btn-outline-dark">
                 Edit
             </a>
             <button type="button" class="btn btn-danger" id="btnModalDelete"
-                    th:onclick="'javascript:showDelete(\''+ ${employee.id} + '\');'">
+                    th:onclick="'javascript:showDelete(\''+ ${service.id} + '\');'">
                 Delete
             </button>
             <!--                            <button class="btn btn-outline-danger btn-lg btnModalDelete" id="btnModalDelete">Delete</button>-->
@@ -70,7 +71,7 @@
         $("#btnModalCreate").click(function () {
             $.ajax({
                 type: "GET",
-                url: "employee/create",
+                url: "service/create",
                 dataType: "HTML",
                 success: function (data) {
                     $(".modal-body").html(data);
@@ -86,7 +87,7 @@
     function showDelete(id) {
         $.ajax({
             type: "GET",
-            url: "employee/delete/"+id,
+            url: "service/delete/"+id,
             dataType: "HTML",
             success: function (data) {
                 $(".modal-body").html(data);
@@ -97,7 +98,7 @@
     function actionDelete(id){
         $.ajax({
             type: "POST",
-            url: "employee/actionDelete/" + id,
+            url: "service/actionDelete/" + id,
             dataType: "HTML",
             success: function (data) {
                 var messageDelete = "Delete!!!";
@@ -117,7 +118,7 @@
             console.log($(this).next());
             $.ajax({
                 type: "GET",
-                url: "employee/view/" + $(this).next().val(),
+                url: "service/view/" + $(this).next().val(),
                 dataType: "HTML",
                 success: function (data) {
                     $(".modal-body").html(data);

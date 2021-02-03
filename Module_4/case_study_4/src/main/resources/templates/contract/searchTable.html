@@ -10,47 +10,40 @@
     <thead class="thead-dark">
     <tr>
         <th scope="col">ID</th>
-        <th scope="col">Name</th>
-        <th scope="col">Date Of Birth</th>
-        <th scope="col">Gender</th>
-        <th scope="col">CMND</th>
-        <th scope="col">Phone Number</th>
-        <th scope="col">Email</th>
-        <th scope="col">Address</th>
-        <th scope="col">Customer Type</th>
+        <th scope="col">Start Date</th>
+        <th scope="col">End Date</th>
+        <th scope="col">Deposit</th>
+        <th scope="col">Total Pay</th>
+        <th scope="col">Employee</th>
+        <th scope="col">Customer</th>
+        <th scope="col">Service</th>
         <th scope="col">Action</th>
     </tr>
     </thead>
     <tbody>
-    <tr th:each="customer : ${customerList}">
-        <td scope="col" th:text="${customer.id}"></td>
-        <td scope="col" th:text="${customer.name}"></td>
-        <td scope="col" th:text="${customer.dateOfBirth}"></td>
-        <th:block th:switch="${customer.gender}">
-            <td scope="col" th:case="0">Male</td>
-            <td scope="col" th:case="1">Female</td>
-            <td scope="col" th:case="*">Other</td>
-        </th:block>
-
-        <td scope="col" th:text="${customer.cmnd}"></td>
-        <td scope="col" th:text="${customer.phoneNumb}"></td>
-        <td scope="col" th:text="${customer.email}"></td>
-        <td scope="col" th:text="${customer.address}"></td>
-        <td scope="col" th:text="${customer.customerType.name}"></td>
+    <tr th:each="contract : ${contractList}">
+        <td scope="col" th:text="${contract.id}"></td>
+        <td scope="col" th:text="${contract.startDate}"></td>
+        <td scope="col" th:text="${contract.endDate}"></td>
+        <td scope="col" th:text="${contract.deposit}"></td>
+        <td scope="col" th:text="${contract.totalMoney}"></td>
+        <td scope="col" th:text="${contract.employee.name}"></td>
+        <td scope="col" th:text="${contract.customer.name}"></td>
+        <td scope="col" th:text="${contract.service.name}"></td>
 
         <td scope="col">
             <!--                            <a th:href="@{/customer/view/{id}(id=${customer.id})}" class="btn btn-outline-info" >-->
             <!--                                View-->
             <!--                            </a>-->
             <button class="btn btn-outline-info btn-lg btnModalView" id="btnModalView">View</button>
-            <input type="hidden" th:value="${customer.id}">
+            <input type="hidden" th:value="${contract.id}">
 
             <!--                                <span class="oi oi-plus" title="icon name" aria-hidden="true"></span>                            </a>-->
-            <a th:href="@{/customer/{id}/edit(id=${customer.id})}" class="btn btn-outline-dark">
+            <a th:href="@{/contract/{id}/edit(id=${contract.id})}" class="btn btn-outline-dark">
                 Edit
             </a>
             <button type="button" class="btn btn-danger" id="btnModalDelete"
-                    th:onclick="'javascript:showDelete(\''+ ${customer.id} + '\');'">
+                    th:onclick="'javascript:showDelete(\''+ ${contract.id} + '\');'">
                 Delete
             </button>
             <!--                            <button class="btn btn-outline-danger btn-lg btnModalDelete" id="btnModalDelete">Delete</button>-->
@@ -72,7 +65,7 @@
         $("#btnModalCreate").click(function () {
             $.ajax({
                 type: "GET",
-                url: "customer/create",
+                url: "contract/create",
                 dataType: "HTML",
                 success: function (data) {
                     $(".modal-body").html(data);
@@ -105,7 +98,7 @@
     function showDelete(id) {
         $.ajax({
             type: "GET",
-            url: "customer/delete/"+id,
+            url: "contract/delete/"+id,
             dataType: "HTML",
             success: function (data) {
                 $(".modal-body").html(data);
@@ -116,7 +109,7 @@
     function actionDelete(id){
         $.ajax({
             type: "POST",
-            url: "customer/actionDelete/" + id,
+            url: "contract/actionDelete/" + id,
             dataType: "HTML",
             success: function (data) {
                 var messageDelete = "Delete!!!";
@@ -136,7 +129,7 @@
             console.log($(this).next());
             $.ajax({
                 type: "GET",
-                url: "customer/view/" + $(this).next().val(),
+                url: "contract/view/" + $(this).next().val(),
                 dataType: "HTML",
                 success: function (data) {
                     $(".modal-body").html(data);

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <th:block th:replace="~{view/layout::bootstrap}"></th:block>
+</head>
+<body>
+<div class="header ">
+    <h1 class="text-center mt-5 mb-5">Them moi giao dich</h1>
+</div>
+<div class="content">
+    <div class="container">
+    <form action="/home/create-giao-dich" th:object="${giaoDich}" method="post">
+        <div class="form-group">
+            <div class="row">
+                <label for="" class="col-form-label col-3">Ma giao dich<span style="color: red">*</span></label>
+                <input class="form-control col-6" th:field="*{id}" type="text">
+            </div>
+            <p class="text-center" style="color: red" th:errors="*{id}"></p>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <label for="" class="col-form-label col-3">Ten khach hang<span style="color: red">*</span></label>
+                <select class="form-control col-6" th:field="*{khachHang}" type="text">
+                    <option value="">Chon khach hang</option>
+                    <option th:each="khachHang : ${khacHangList}" th:value="${khachHang.id}" th:text="${khachHang.ten}"></option>
+                </select>
+            </div>
+        </div>
+        <p class="text-center" th:errors="*{khachHang}" style="color: red"></p>
+        <div class="form-group">
+            <div class="row">
+                <label for="" class="col-form-label col-3">Loai bat dong san<span style="color: red">*</span></label>
+                <label>
+                    Dat
+                    <input class="mr-5"  th:field="*{loaiDichVu}" type="radio" value="Dat">
+                </label>
+                <label class="ml-5">
+                    Nha dat
+                    <input  th:field="*{loaiDichVu}" type="radio" value="Nha dat">
+                </label>
+            </div>
+        </div>
+        <p class="text-center" style="color:red;" th:errors="*{loaiDichVu}"></p>
+
+        <div class="form-group">
+            <div class="row">
+                <label for="" class="col-form-label col-3">Ngay giao dich<span style="color: red">*</span></label>
+                <input class="form-control col-6" th:field="*{ngayGiaoDich}" type="date">
+            </div>
+        </div>
+        <p class="text-center" style="color:red;" th:errors="*{ngayGiaoDich}"></p>
+        <div class="form-group">
+            <div class="row">
+                <label for="" class="col-form-label col-3">Don gia<span style="color: red">*</span></label>
+                <input class="form-control col-6" th:field="*{donGia}" type="text">
+            </div>
+        </div>
+        <p class="text-center" style="color:red;" th:errors="*{donGia}"></p>
+
+        <div class="form-group">
+            <div class="row">
+                <label for="" class="col-form-label col-3">Dien tich<span style="color: red">*</span></label>
+                <input class="form-control col-6" th:field="*{dienTich}" type="text">
+            </div>
+        </div>
+        <p class="text-center" style="color:red;" th:errors="*{dienTich}"></p>
+
+        <div style="margin-left: 600px">
+            <a href="/home" class="btn btn-outline-primary">Huy</a>
+            <button type="submit" class="btn-outline-success btn">Luu</button>
+        </div>
+    </form>
+    </div>
+</div>
+<div class="footer"></div>
+</body>
+</html>

@@ -132,6 +132,7 @@ public class Contract implements Validator {
 
         if (dateInput1 == null || dateInput2 == null) {
             errors.rejectValue("startDate", "DateNotNull");
+            errors.rejectValue("startDate", "DateNotNull");
         }   else {
             if (dateInput2.before(dateInput1)) {
                 errors.rejectValue("endDate", "EndDateMustAfterOrEqualStartDate");

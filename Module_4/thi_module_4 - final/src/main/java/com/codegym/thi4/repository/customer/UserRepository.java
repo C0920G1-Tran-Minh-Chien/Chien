@@ -1,4 +1,7 @@
 package com.codegym.thi4.repository.customer;
 
-public interface UserRepository {
+import com.codegym.thi4.model.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UserRepository extends JpaRepository<User, Integer> {
 }

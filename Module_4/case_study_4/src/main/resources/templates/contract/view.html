@@ -15,45 +15,41 @@
             <div class="col-lg-12 bg-light" >
                 <table class="table table-striped">
                     <tr>
-                        <th>Name:</th>
-                        <td th:text="${customer.name}"></td>
+                        <th>Id:</th>
+                        <td scope="col" th:text="${contract.id}"></td>
                     </tr>
                     <tr>
-                        <th>Date of birth:</th>
-                        <td th:text="${customer.dateOfBirth}"></td>
+                        <th>Start Day:</th>
+                        <td scope="col" th:text="${contract.startDate}"></td>
                     </tr>
                     <tr>
-                        <th>Gender:</th>
-                        <th:block th:switch="${customer.gender}">
-                            <td th:case="0">Male</td>
-                            <td th:case="1">Female</td>
-                            <td th:case="*">Other</td>
-                        </th:block>
+                        <th>End Day:</th>
+                        <td scope="col" th:text="${contract.endDate}"></td>
                     </tr>
                     <tr>
-                        <th>ID Card:</th>
-                        <td th:text="${customer.cmnd}"></td>
+                        <th>Deposit:</th>
+                        <td scope="col" th:text="${contract.deposit}"></td>
                     </tr>
                     <tr>
-                        <th>Phone number:</th>
-                        <td th:text="${customer.phoneNumb}"></td>
+                        <th>Price:</th>
+                        <td scope="col" th:text="${contract.totalMoney}"></td>
                     </tr>
                     <tr>
-                        <th>Email:</th>
-                        <td th:text="${customer.email}"></td>
+                        <th>Employee :</th>
+                        <td scope="col" th:text="${contract.employee.name}"></td>
                     </tr>
                     <tr>
-                        <th>Address:</th>
-                        <td th:text="${customer.address}"></td>
+                        <th>Customer :</th>
+                        <td scope="col" th:text="${contract.customer.name}"></td>
                     </tr>
                     <tr>
-                        <th>Customer Type:</th>
-                        <td th:text="${customer.customerType.getName()}"></td>
+                        <th>Service :</th>
+                        <td scope="col" th:text="${contract.service.name}"></td>
                     </tr>
 
 
                 </table>
-                <a th:href="@{/customer}" class="btn btn-outline-info">Back</a>
+                <a th:href="@{/contract}" class="btn btn-outline-info">Back</a>
             </div>
         </div>
     </div>

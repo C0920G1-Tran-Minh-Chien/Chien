@@ -1,5 +1,6 @@
 package com.casestudy.controller;
 
+import com.casestudy.model.Customer;
 import com.casestudy.model.Employee;
 import com.casestudy.model.Role;
 import com.casestudy.model.User;
@@ -63,6 +64,7 @@ public class EmployeeController {
 
     @PostMapping("/employee/create")
     public String createEmployee(@Valid @ModelAttribute Employee employee, BindingResult bindingResult, RedirectAttributes redirectAttributes, Model model) {
+        new Employee().validate(employee, bindingResult);
         if (bindingResult.hasErrors()) {
             model.addAttribute("positionList", positionService.findAll());
             model.addAttribute("educationList", educationService.findAll());

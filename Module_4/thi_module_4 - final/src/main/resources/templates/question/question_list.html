@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List Customer</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div class="container-fluid">
+<!--    <div th:replace="layout :: header"></div>-->
+<!--    <div th:replace="layout :: nav"></div>-->
+    <div id="content" style="background-color: antiquewhite">
+        <div class="row">
+<!--            <div class="col-lg-2 bg-light" th:replace="layout :: col2">-->
+<!--            <div class="col-lg-2 bg-light" >-->
+<!--            </div>-->
+            <div class="col-lg-12 bg-light" >
+                <a th:href="@{question/create}" class="btn btn-outline-primary" id="btnModalCreate">Create</a>
+<!--                <button type="button" class="btn btn-outline-success btn-lg" id="btnModalCreate">-->
+<!--                    Create-->
+<!--                </button>-->
+                <form class="form-inline my-2 my-lg-0" th:action="@{/question}" style="float: right">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="searchNameCustomer" style="width: 300px">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+                <div id="searchTable">
+                <table cellspacing="2"  class="table table-hover" >
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Question</th>
+                        <th scope="col">Answer</th>
+                        <th scope="col">Question Type</th>
+                        <th scope="col">Date Create</th>
+                        <th scope="col">User Create</th>
+                        <th scope="col">User Feedback</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="question : ${questionList}">
+                        <td scope="col" th:text="${question.id}"></td>
+                        <td scope="col" th:text="${question.title}"></td>
+                        <td scope="col" th:text="${question.questions}"></td>
+                        <td scope="col" th:text="${question.answer}"></td>
+                        <td scope="col" th:text="${question.questionType.name}"></td>
+                        <td scope="col" th:text="${question.dateCreate}"></td>
+                        <td scope="col" th:text="${question.user.name}"></td>
+
+                        <td scope="col" th:text="${question.user.name}"></td>
+                        <th:block th:switch="${question.status}">
+                            <td scope="col" th:case="0">Chờ Phản Hồi</td>
+                            <td scope="col" th:case="1">Đã Phản Hồi</td>
+                        </th:block>
+
+                        <td scope="col">
+                            <button class="btn btn-outline-info btn-lg btnModalView" id="btnModalView">View</button>
+                            <input type="hidden" th:value="${question.id}">
+
+                            <a class="btn btn-outline-dark" th:href="@{/question/edit/{id}(id=${question.getId()})}">Update</a>
+                            <button type="button" class="btn btn-outline-danger" id="btnModalDelete"
+                                    th:onclick="'javascript:showDelete(\''+ ${question.id} + '\');'">
+                                Delete
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+
+                </table>
+                </div>
+                <span th:text="${message}" style="text-align: center; color: blue"></span>
+                <nav aria-label="Page navigation example" style="float: right; margin-right: 25px">
+                    <ul class="pagination">
+                        <li class="page-item"><a class="page-link" th:href="@{/question(page = 0, searchNameCustomer = ${stringAfterCheck})}">Prevous</a></li>
+                        <th:block th:each="i: ${#numbers.sequence(0, questionList.totalPages - 1)}">
+                            <li class="page-item">
+                                <a class="page-link" th:href="@{/question(page=${i},searchNameCustomer=${stringAfterCheck})}" th:text="${i + 1}"></a>
+                            </li>
+                        </th:block>
+
+                        <li class="page-item"><a class="page-link" th:href="@{/question(page = ${questionList.totalPages - 1}, searchNameCustomer = ${stringAfterCheck})}">Next</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Body
+            </div>
+            <div class="modal-footer">
+<!--                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+            </div>
+        </div>
+    </div>
+</div>
+<script></script>
+
+<script src="/js/jquery-3.5.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+<script>
+
+    function showDelete(id) {
+        $.ajax({
+            type: "GET",
+            url: "question/delete/"+id,
+            dataType: "HTML",
+            success: function (data) {
+                $(".modal-body").html(data);
+                $("#modelId").modal('show');
+            }
+        })
+    }
+    function actionDelete(id){
+        console.log(id);
+        $.ajax({
+            type: "POST",
+            url: "question/actionDelete/" + id,
+            dataType: "HTML",
+            success: function (data) {
+                // console.log(id + "a");
+                let messageDelete = "Delete Success!!!";
+                setTimeout(function() {
+                    $("#modelId").modal('hide');
+                }, 6000);
+                $("#searchTable").html(data);
+
+                $(".modal-body").html(messageDelete);
+
+            }
+        })
+    }
+</script>
+<!--ajax View modal-->
+<script>
+    $(document).ready(function () {
+        $(".btnModalView").click(function () {
+            $.ajax({
+                type: "GET",
+                url: "question/view/" + $(this).next().val(),
+                dataType: "HTML",
+                success: function (data) {
+                    $(".modal-body").html(data);
+                    $("#modelId").modal('show');
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>

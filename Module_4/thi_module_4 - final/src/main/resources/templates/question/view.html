@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Customer</title>
+</head>
+<body>
+<div class="container-fluid">
+<!--    <div th:replace="layout :: header"></div>-->
+<!--    <div th:replace="layout :: nav"></div>-->
+    <div id="content" style="background-color: whitesmoke">
+        <div class="row">
+            <h2>Chi tiết câu hỏi!</h2>
+<!--            <div class="col-lg-2 bg-light" th:replace="layout :: col2">-->
+            </div>
+            <div class="col-lg-12 bg-light" >
+                <table class="table table-striped">
+                    <tr>
+                        <th>Name:</th>
+                        <td th:text="${question.title}"></td>
+                    </tr>
+                    <tr>
+                        <th>Date of birth:</th>
+                        <td th:text="${question.questions}"></td>
+                    </tr>
+
+                    <tr>
+                        <th>ID Card:</th>
+                        <td th:text="${question.answer}"></td>
+                    </tr>
+                    <tr>
+                        <th>Phone number:</th>
+                        <td th:text="${question.questionType.getName()}"></td>
+                    </tr>
+                    <tr>
+                        <th>Email:</th>
+                        <td th:text="${question.dateCreate}"></td>
+                    </tr>
+                    <tr>
+                        <th>Address:</th>
+                        <td th:text="${question.user.getName()}"></td>
+                    </tr>
+
+                    <tr>
+                        <th>Address:</th>
+                        <td th:text="${question.user.getName()}"></td>
+                    </tr>
+                    <tr>
+                        <th>Status:</th>
+                        <th:block th:switch="${question.status}">
+                            <td th:case="0">Chờ Phản Hồi</td>
+                            <td th:case="1">Chưa Phản Hồi</td>
+                        </th:block>
+                    </tr>
+
+                </table>
+                <a th:href="@{/question}" class="btn btn-outline-info">Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

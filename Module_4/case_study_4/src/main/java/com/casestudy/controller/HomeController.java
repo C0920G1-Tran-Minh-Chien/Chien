@@ -18,6 +18,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class HomeController {
     @GetMapping("/hello")
     public String getIndex() {
+
         return "index";
     }
     @GetMapping("/")

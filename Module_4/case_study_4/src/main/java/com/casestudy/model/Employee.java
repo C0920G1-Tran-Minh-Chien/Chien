@@ -1,31 +1,42 @@
 package com.casestudy.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.validation.Errors;
+import org.springframework.validation.Validator;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.PastOrPresent;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.ZoneId;
+import java.util.Date;
 import java.util.List;
 
 @Entity
 @Table(name = "employee")
-public class Employee {
+public class Employee implements Validator {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @NotEmpty
+    @NotBlank(message = "Name must not be Blank")
     private String name;
 
-    @NotEmpty
-    private String dateOfBirth;
-    @NotEmpty
+    @DateTimeFormat(pattern = "yyyy-mm-dd")
+    @PastOrPresent
+    private Date dateOfBirth;
+    @NotBlank(message = "Idcard must not be Blank")
     private String cmnd;
     @NotNull
     private double salary;
-    @NotEmpty
+    @NotBlank(message = "Phone number must not be Blank")
     private String phoneNumb;
-    @NotEmpty
+    @NotBlank(message = "Email must not be Blank")
     private String email;
-    @NotEmpty
+    @NotBlank(message = "Address must not be Blank")
     private String address;
     @ManyToOne
     @JoinColumn(name = "position_id")
@@ -71,11 +82,11 @@ public class Employee {
         this.name = name;
     }
 
-    public String getDateOfBirth() {
+    public Date getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
+    public void setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -151,4 +162,24 @@ public class Employee {
         this.contract = contract;
     }
 
+    @Override
+    public boolean supports(Class<?> clazz) {
+        return Employee.class.isAssignableFrom(clazz);
+    }
+
+    @Override
+    public void validate(Object target, Errors errors) {
+        Employee employee = (Employee) target;
+        LocalDate today = LocalDate.now();
+        Date birth = employee.getDateOfBirth();
+        if (birth == null) {
+            errors.rejectValue("dateOfBirth", "DateNotNull");
+        } else {
+            LocalDate birthLocal =  birth.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+            if (Period.between(birthLocal, today).getYears()<18) {
+                errors.rejectValue("dateOfBirth", "DateEmployee");
+            }
+        }
+
+    }
 }

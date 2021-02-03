@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <th:block th:replace="~{view/layout::bootstrap}"></th:block>
+</head>
+<body background="/bg3.jpg">
+
+
+
+<div class="header text-center mt-5 mb-5">
+    <h1 class="text-center" style="color: white">Khach hang List</h1>
+    <h1 class="text-center" style="color:green;" th:text="${success}"></h1>
+    <a href="/home/create-giao-dich" class="btn btn-outline-success mt-2">Them moi</a>
+
+</div>
+<div class="content">
+    <div class="container mt-5 mb-5">
+        <div class="">
+            <form action="/home" class="form-inline">
+                    <input name="tenKhachHang" class="form-control" type="text" placeholder="ten khach hang">
+                    <select class="form-control ml-2" name="loaiDichVu">
+                        <option value="">Chon loai bat dong san</option>
+                        <option value="Dat">Dat</option>
+                        <option value="Nha dat">Nha Dat</option>
+                    </select>
+                <input type="submit" class="ml-2 btn btn-outline-success">
+            </form>
+        </div>
+        <div>
+            <table class="table table-dark bg-dark">
+                <thead>
+                <tr>
+                    <th>Ma giao dich</th>
+                    <th>Ten khach hang</th>
+                    <th>Ngay giao dich</th>
+                    <th>Loai dich vu</th>
+                    <th>Don gia(VND/m^2)</th>
+                    <th>Dien tich(m^2)</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="giaoDich : ${giaoDichList}">
+                    <td th:text="${giaoDich.id}"></td>
+                    <td th:text="${giaoDich.khachHang.ten}"></td>
+                    <td th:text="${giaoDich.ngayGiaoDich}"></td>
+                    <td th:text="${giaoDich.loaiDichVu}"></td>
+                    <td th:text="${giaoDich.donGia}"></td>
+                    <td th:text="${giaoDich.dienTich}"></td>
+                    <td><a th:href="@{/home/detail/{id}(id=${giaoDich.id})}" class="btn btn-outline-success">Chi
+                        tiet</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="footer"></div>
+</body>
+</html>

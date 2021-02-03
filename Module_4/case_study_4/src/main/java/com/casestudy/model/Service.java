@@ -16,18 +16,24 @@ public class Service  {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
+    @NotBlank(message = "Name must not be Blank")
     private String name;
 
+    @NotNull
     private double area;
 
     private double cost;
 
+    @NotNull
     private int maxPeople;
 
+    @NotBlank(message = "Standard must not be Blank")
     private String standardRoom;
 
+    @NotBlank(message = "Descript must not be Blank")
     private String descriptionOtherConvenience;
 
+    @NotNull(message = "pool area must not be Blank")
     private double poolArea;
 
 //    @NotEmpty

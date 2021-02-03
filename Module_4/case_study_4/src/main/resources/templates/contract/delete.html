@@ -15,13 +15,12 @@
 <!--    </div>-->
 <!--    <input type="submit" value="delete">-->
 <!--</form>-->
-<input type="hidden" th:field="${employee.id}">
+<input type="hidden" th:field="${contract.id}">
 <div>
-    Content: <p th:text="${employee.name}"></p>
-    Content: <p th:text="${employee.id}"></p>
+    Id: <p th:text="${contract.id}"></p>
     Do you sure to delete?
 </div>
 <button id="clickDelete" type="button" class="btn btn-danger"
-        th:onclick="'javascript:actionDelete(\''+ ${employee.id} + '\');'">Delete</button>
+        th:onclick="'javascript:actionDelete(\''+ ${contract.id} + '\');'">Delete</button>
 </body>
 </html>

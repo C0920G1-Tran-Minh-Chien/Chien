@@ -19,7 +19,7 @@ public class Customer implements Validator {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @NotEmpty
+    @NotBlank(message = "Name must not be Blank")
     private String name;
 
     @DateTimeFormat(pattern = "yyyy-mm-dd")
@@ -28,7 +28,7 @@ public class Customer implements Validator {
 
     private String gender;
 
-    @NotEmpty
+    @NotBlank(message = "Idcard must not be Blank")
     @Size(min = 9, max = 9)
     private String cmnd;
 
@@ -37,11 +37,11 @@ public class Customer implements Validator {
     @Pattern(regexp = "^0\\d{9}$")
     private String phoneNumb;
 
-    @NotEmpty
+    @NotBlank(message = "Email must not be Blank")
     @Email
     private String email;
 
-    @NotEmpty
+    @NotBlank(message = "Address must not be Blank")
     private String address;
 
     @ManyToOne

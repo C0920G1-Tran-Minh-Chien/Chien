@@ -15,49 +15,49 @@
             <div class="col-lg-12 bg-light" >
                 <table class="table table-striped">
                     <tr>
+                        <th>Id:</th>
+                        <td scope="col" th:text="${service.id}"></td>
+                    </tr>
+                    <tr>
                         <th>Name:</th>
-                        <td th:text="${employee.name}"></td>
+                        <td scope="col" th:text="${service.name}"></td>
                     </tr>
                     <tr>
-                        <th>Date of birth:</th>
-                        <td th:text="${employee.dateOfBirth}"></td>
+                        <th>Area:</th>
+                        <td scope="col" th:text="${service.area}"></td>
                     </tr>
                     <tr>
-                        <th>ID Card:</th>
-                        <td th:text="${employee.cmnd}"></td>
+                        <th>Cost:</th>
+                        <td scope="col" th:text="${service.cost}"></td>
                     </tr>
                     <tr>
-                        <th>Phone number:</th>
-                        <td th:text="${employee.phoneNumb}"></td>
+                        <th>AMount:</th>
+                        <td scope="col" th:text="${service.maxPeople}"></td>
                     </tr>
                     <tr>
-                        <th>Email:</th>
-                        <td th:text="${employee.email}"></td>
+                        <th>Standard:</th>
+                        <td scope="col" th:text="${service.standardRoom}"></td>
                     </tr>
                     <tr>
-                        <th>Address:</th>
-                        <td th:text="${employee.address}"></td>
+                        <th>Description:</th>
+                        <td scope="col" th:text="${service.descriptionOtherConvenience}"></td>
                     </tr>
                     <tr>
-                        <th>Position:</th>
-                        <td th:text="${employee.position.getName()}"></td>
+                        <th>Floors:</th>
+                        <td scope="col" th:text="${service.numFloors}"></td>
                     </tr>
                     <tr>
-                        <th>Education:</th>
-                        <td th:text="${employee.education.getName()}"></td>
+                        <th>Service Type:</th>
+                        <td scope="col" th:text="${service.serviceType.name}"></td>
                     </tr>
                     <tr>
-                        <th>Division:</th>
-                        <td th:text="${employee.division.getName()}"></td>
-                    </tr>
-                    <tr>
-                        <th>User:</th>
-                        <td th:text="${employee.user.getUsername()}"></td>
+                        <th>Rent Type:</th>
+                        <td scope="col" th:text="${service.rentType.name}"></td>
                     </tr>
 
 
                 </table>
-                <a th:href="@{/employee}" class="btn btn-outline-info">Back</a>
+                <a th:href="@{/service}" class="btn btn-outline-info">Back</a>
             </div>
         </div>
     </div>

@@ -95,30 +95,13 @@ public class CustomerController {
         model.addAttribute("customerList", customerList);
         return "customer/searchTable";
     }
-
-    //    @PostMapping(value = "/actionDelete/{id}")
-//    public String delete(@PathVariable("id") int id, Pageable pageable, Model model) {
-//        customerService.delete(id);
-//        Page<Customer> blogList = customerService.findAll(pageable);
-//        model.addAttribute("blogList", blogList);
-//        return "blogs/search";
 //    }
     @GetMapping("/customer/delete/{id}")
     public String deleteCustomer(@PathVariable int id, Model model) {
         Customer customer = customerService.findById(id);
         model.addAttribute("customer", customer);
         return "/customer/delete";
-//            Customer customer = customerService.findById(id);
-//            if(customer != null) {
-//                ModelAndView modelAndView = new ModelAndView("customer/delete");
-//                modelAndView.addObject("customer", customer);
-////                modelAndView.setViewName("customer/customer_list");
-//                return modelAndView;
-//            }
-//            else {
-//                ModelAndView modelAndView = new ModelAndView("");
-//                return modelAndView;
-//            }
+
     }
 
     @GetMapping("/customer/view/{id}")

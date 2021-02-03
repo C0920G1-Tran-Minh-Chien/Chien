@@ -7,14 +7,15 @@
 </head>
 <body>
 <div class="container-fluid">
-    <div th:replace="layout :: header"></div>
-    <div th:replace="layout :: nav"></div>
+<!--    <div th:replace="layout :: header"></div>-->
+<!--    <div th:replace="layout :: nav"></div>-->
     <div id="content" style="background-color: antiquewhite">
         <div class="row">
-            <div class="col-lg-2 bg-light" th:replace="layout :: col2">
+<!--            <div class="col-lg-2 bg-light" th:replace="layout :: col2">-->
+            <div class="col-lg-2 bg-light">
             </div>
             <div class="col-lg-10 bg-light" >
-                <a th:href="@{customer/create}" class="btn btn-outline-primary" id="btnModalCreate">Create Customer</a>
+                <a th:href="@{customer/create}" class="btn btn-outline-primary" id="btnModalCreate">Create</a>
 <!--                <button type="button" class="btn btn-outline-success btn-lg" id="btnModalCreate">-->
 <!--                    Create-->
 <!--                </button>-->
@@ -30,7 +31,7 @@
                         <th scope="col">Name</th>
                         <th scope="col">Date Of Birth</th>
                         <th scope="col">Gender</th>
-                        <th scope="col">CMND</th>
+                        <th scope="col">Id Card</th>
                         <th scope="col">Phone Number</th>
                         <th scope="col">Email</th>
                         <th scope="col">Address</th>
@@ -65,10 +66,10 @@
 <!--                            </button>-->
 
                             <a class="btn btn-outline-dark" th:href="@{/customer/edit/{id}(id=${customer.getId()})}">Update</a>
-                            <button type="button" class="btn btn-outline-danger" id="btnModalDelete"
-                                    th:onclick="'javascript:showDelete(\''+ ${customer.id} + '\');'">
-                                Delete
-                            </button>
+<!--                            <button type="button" class="btn btn-outline-danger" id="btnModalDelete"-->
+<!--                                    th:onclick="'javascript:showDelete(\''+ ${customer.id} + '\');'">-->
+<!--                                Delete-->
+<!--                            </button>-->
                         </td>
                     </tr>
                     </tbody>
@@ -100,7 +101,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Modal title</h5>
+                <h5 class="modal-title"></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -109,7 +110,7 @@
                 Body
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+<!--                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
             </div>
         </div>
     </div>

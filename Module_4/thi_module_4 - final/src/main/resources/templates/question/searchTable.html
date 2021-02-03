@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="searchTable">
+<table cellspacing="2"  class="table table-hover" >
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Title</th>
+        <th scope="col">Question</th>
+        <th scope="col">Answer</th>
+        <th scope="col">Question Type</th>
+        <th scope="col">Date Create</th>
+        <th scope="col">User Create</th>
+        <th scope="col">User Feedback</th>
+        <th scope="col">Status</th>
+        <th scope="col">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="question : ${questionList}">
+        <td scope="col" th:text="${question.id}"></td>
+        <td scope="col" th:text="${question.title}"></td>
+        <td scope="col" th:text="${question.questions}"></td>
+        <td scope="col" th:text="${question.answer}"></td>
+        <td scope="col" th:text="${question.questionType.name}"></td>
+        <td scope="col" th:text="${question.dateCreate}"></td>
+        <td scope="col" th:text="${question.user.name}"></td>
+
+        <td scope="col" th:text="${question.user.name}"></td>
+        <th:block th:switch="${question.status}">
+            <td scope="col" th:case="0">Chờ Phản Hồi</td>
+            <td scope="col" th:case="1">Đã Phản Hồi</td>
+        </th:block>
+
+        <td scope="col">
+            <button class="btn btn-outline-info btn-lg btnModalView" id="btnModalView">View</button>
+            <input type="hidden" th:value="${question.id}">
+
+            <a class="btn btn-outline-dark" th:href="@{/question/edit/{id}(id=${question.getId()})}">Update</a>
+            <button type="button" class="btn btn-outline-danger" id="btnModalDelete"
+                    th:onclick="'javascript:showDelete(\''+ ${question.id} + '\');'">
+                Delete
+            </button>
+        </td>
+    </tr>
+    </tbody>
+
+</table>
+</div>
+<script>
+    $(document).ready(function () {
+        $("#btnModalCreate").click(function () {
+            $.ajax({
+                type: "GET",
+                url: "question/create",
+                dataType: "HTML",
+                success: function (data) {
+                    $(".modal-body").html(data);
+                    $("#modelId").modal('show');
+                }
+            });
+        });
+    });
+</script>
+<!--ajax delete modal-->
+<script>
+    function showDelete(id) {
+        $.ajax({
+            type: "GET",
+            url: "question/delete/"+id,
+            dataType: "HTML",
+            success: function (data) {
+                $(".modal-body").html(data);
+                $("#modelId").modal('show');
+            }
+        })
+    }
+    function actionDelete(id){
+        $.ajax({
+            type: "POST",
+            url: "question/actionDelete/" + id,
+            dataType: "HTML",
+            success: function (data) {
+                var messageDelete = "Delete!!!";
+                $("#modelId").modal('hide');
+                $("#searchTable").html(data);
+                $(".modal-body").html(messageDelete);
+                $("#modelId").modal('show');
+            }
+        })
+    }
+</script>
+
+<!--ajax View modal-->
+<script>
+    $(document).ready(function () {
+        $("#btnModalView").click(function () {
+            console.log($(this).next());
+            $.ajax({
+                type: "GET",
+                url: "question/view/" + $(this).next().val(),
+                dataType: "HTML",
+                success: function (data) {
+                    $(".modal-body").html(data);
+                    $("#modelId").modal('show');
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>
