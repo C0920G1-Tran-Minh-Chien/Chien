@@ -1,54 +1,35 @@
-// import "./scss/styles.scss";
-
-/**
- * If/else
- */
-
-let count = 50;
-if (count > 0) {
-    count--;
-} else {
-    count = 0;
+import '../scss/styles.scss';
+interface ISingleRepo {
+    name: string;
 }
-console.log(count);
-
-/**
- * loop
- */
-
-console.log("for loop");
-
-const keys = "abcdef";
-for (let idx = 0; idx < keys.length; ++idx) {
-    console.log(keys[idx]);
+interface IRepos {
+    items: Array<ISingleRepo>;
+}
+async function fetchRepo(): Promise<Array<ISingleRepo>> {
+    let res: Response | IRepos = await fetch('https://api.github.com/search/repositories?q=angular');
+    res = await res.json() as IRepos;
+    return res.items;
 }
 
-console.log("while loop");
-let idx = 0;
-while (idx < keys.length) {
-    console.log(keys[idx]);
-    ++idx;
+function createItem(text: string): HTMLLIElement {
+    const item = document.createElement('li') as HTMLLIElement;
+    item.textContent = text;
+    return item;
 }
 
-console.log("do-while loop");
+const container = document.querySelector('.app .list');
 
-idx = 0;
-do {
-    console.log(keys[idx]);
-    ++idx;
-} while (idx < keys.length);
-
-console.log("for-of loop");
-for (const item of keys) {
-    console.log(item);
+async function main() {
+    // step 1: fetch repo
+    const res = await fetchRepo();
+    // step 2: lặp qua mảng các item trả về
+    // step 3: call hàm createItem sau đó truyền vào name của từng item ở mỗi vòng lặp
+    // step 4: call hàm container.appendChild(item mà hàm createItem trả về)
+    res.forEach((item: any) => {
+        const li = createItem(item.name);
+        // @ts-ignore
+        container.appendChild(li);
+    });
 }
 
-console.log("for-in loop");
-const user = {
-    name: 'Bob',
-    age: 55
-};
-for (const key in user) {
-    // @ts-ignore
-    console.log(`${key}: ${user[key]}`);
-}
+main();
