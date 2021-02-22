@@ -1,10 +1,23 @@
-// template
-<h2>Today's article</h2>
-<hr>
-<div *ngFor="let art of articles">
-  <a href="{{art.url}}" target="_blank">{{art.title}}</a>
-  <app-likes></app-likes>
+<div class="container">
+  <app-header></app-header>
+  <!--<h2>Today's article</h2>-->
+  <div class="row">
+    <ng-container *ngFor="let art of articles">
+      <div class="col-lg-4">
+        <img class="rounded-circle"
+             src="https://vnn-imgs-f.vgcloud.vn/2020/10/28/09/-3.jpg"
+             alt="Generic placeholder image" width="100%" height="240">
+        <a href="{{art.url}}" target="_blank">{{art.title}}</a>
+        <br>
+        <app-likes></app-likes>
+        <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+      </div>
+      <!--  <a href="{{art.url}}" target="_blank">{{art.title}}</a>-->
+      <!--  <app-likes></app-likes>-->
+    </ng-container>
+  </div>
+  <textarea [(ngModel)]="title" cols="70" placeholder="Enter title ..."></textarea>
+  <textarea [(ngModel)]="url" cols="70" placeholder="Enter url ..."></textarea>
+  <button (click)="addArticle()" class="btn-danger">Add</button>
+  <app-footer></app-footer>
 </div>
-<textarea [(ngModel)]="title" cols="70" placeholder="Enter title ..."></textarea>
-<textarea [(ngModel)]="url" cols="70" placeholder="Enter url ..."></textarea>
-<button (click)="addArticle()">Add</button>

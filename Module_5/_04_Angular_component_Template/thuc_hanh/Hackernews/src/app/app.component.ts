@@ -1,5 +1,5 @@
+// @ts-ignore
 import { Component } from '@angular/core';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -33,7 +33,9 @@ export class AppComponent {
     url: string;
 
   addArticle() {
-    this.articles.push({title: this.title, url: this.url});
+    this.articles.push({
+      title: this.title,
+      url: this.url});
     this.title = undefined;
     this.url = undefined;
   }
