@@ -9,6 +9,7 @@ import { LikesComponent } from './likes/likes.component';
 import { MenuComponent } from './menu/menu.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { AddNewArticleComponent } from './add-new-article/add-new-article.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FooterComponent } from './footer/footer.component';
     LikesComponent,
     MenuComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    AddNewArticleComponent
   ],
     imports: [
         BrowserModule,

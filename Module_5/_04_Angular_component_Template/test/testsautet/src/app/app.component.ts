@@ -10,7 +10,7 @@ export class AppComponent {
   name = "";
   en: string = "hello";
   vn: string = "chao";
-  imageUrl = "https://angular.io/assets/images/logos/angular/logo-nav@2x.png";
+  imageUrl = " ";
   forgot = false;
 
   toggleForgot(){

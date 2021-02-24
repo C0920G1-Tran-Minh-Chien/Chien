@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e29a34d7-3f2b-4aee-bc01-21c97c0ab3fe" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../../Module_1/4_Git_HTML/4_GitProject" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module_1/4_Git_HTML/4_GitProject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module_4/_03_data_binding/thuc_hanh/UploadMultiFile/CGDN-Spring-UploadMultiFiles" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module_4/_03_data_binding/thuc_hanh/UploadMultiFile/CGDN-Spring-UploadMultiFiles" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../_04_Angular_component_Template/test/testsautet/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../_04_Angular_component_Template/test/testsautet/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../_04_Angular_component_Template/thuc_hanh/Hackernews/src/app/likes/likes.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../_04_Angular_component_Template/thuc_hanh/Hackernews/src/app/likes/likes.component.spec.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="1os3tTmRY5ThOa5AfPvyMirnjxw" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ComponentTemplate" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e29a34d7-3f2b-4aee-bc01-21c97c0ab3fe" name="Default Changelist" comment="" />
+      <created>1614061685120</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1614061685120</updated>
+      <workItem from="1614061686827" duration="199000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="231" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1614061842701">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="231" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1614061842701" />
+    <state x="557" y="168" key="FileChooserDialogImpl" timestamp="1614061884207">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="557" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1614061884207" />
+  </component>
+</project>
