@@ -1,0 +1,28 @@
+{
+  "resto": [
+    {
+      "name": "Anh1",
+      "Address": "b",
+      "email": "sggt.com",
+      "id": 5
+    }
+  ],
+  "users": [
+    {
+      "name": "Ashish Mishra",
+      "password": "123456789",
+      "email": "ashish@gmail.com",
+      "id": 1
+    },
+    {
+      "email": "ashish@gmail.com",
+      "password": "123456789",
+      "id": 2
+    },
+    {
+      "email": "jsdfkj",
+      "password": "kajsfkahk",
+      "id": 3
+    }
+  ]
+}

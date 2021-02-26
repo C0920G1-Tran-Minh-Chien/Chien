@@ -1,0 +1,40 @@
+{
+  "resto": [
+    {
+      "name": "Chien1",
+      "Adress": "Qb1",
+      "email": "abc",
+      "id": 1
+    },
+    {
+      "name": "Anh",
+      "Adress": "Dn ",
+      "email": "sggt.com",
+      "id": 2
+    },
+    {
+      "name": "Ngoc",
+      "Adress": "HP",
+      "email": "abc.com",
+      "id": 3
+    }
+  ],
+  "users": [
+    {
+      "name": "Ashish Mishra",
+      "password": "123456789",
+      "email": "ashish@gmail.com",
+      "id": 1
+    },
+    {
+      "email": "ashish@gmail.com",
+      "password": "123456789",
+      "id": 2
+    },
+    {
+      "email": "jsdfkj",
+      "password": "kajsfkahk",
+      "id": 3
+    }
+  ]
+}
