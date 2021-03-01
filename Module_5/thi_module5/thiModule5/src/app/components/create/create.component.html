@@ -1,0 +1,73 @@
+<div class="jumbotron">
+  <h1 class="text-center">Create Form</h1>
+</div>
+<div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Success !</strong> Your data Updated successfully !.
+  <button (click)=" closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<form [formGroup]="createCustomer" (ngSubmit)="addCustomer()" >
+  <div class="form-group">
+    <label>Name</label>
+    <input type="text" class="form-control" placeholder="Enter Name" formControlName="name">
+    <p *ngIf="createCustomer.controls.name.errors?.required && createCustomer.controls.name.touched"
+       class="text-danger">Vui long nhap!</p>
+  </div>
+  <div class="form-group">
+    <label>Date Of Birth</label>
+    <!--    <input type="date" class="form-control" placeholder="" formControlName="dateOfBirth">-->
+    <mat-form-field>
+      <input [max]="maxDate" [min]="minDate" formControlName="dateOfBirth" matInput [matDatepicker]="myDatepicker" style="color: deeppink">
+      <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+      <mat-datepicker #myDatepicker></mat-datepicker>
+    </mat-form-field>
+    <p *ngIf="createCustomer.controls.dateOfBirth.errors?.required && createCustomer.controls.dateOfBirth.touched"
+       class="text-danger">Vui long nhap!</p>
+
+  </div>
+  <div class="form-group">
+    <label>Gender</label>
+    <!--    <input type="text" class="form-control" placeholder="Enter Email" formControlName="gender">-->
+    <select class="form-control" formControlName="gender">
+      <option value="Male"> Male</option>
+      <option value="Female">Female</option>
+      <option value="Other">Other</option>
+    </select>
+    <p *ngIf="createCustomer.controls.gender.errors?.required && createCustomer.controls.gender.touched"
+       class="text-danger">Vui long nhap!</p>
+  </div>
+  <div class="form-group">
+    <label>ID Card</label>
+    <input type="text" class="form-control" placeholder="Enter Id Card" formControlName="idcard">
+    <p *ngIf="createCustomer.controls.idcard.errors?.required && createCustomer.controls.idcard.touched"
+       class="text-danger">Vui long nhap!</p>
+  </div>
+  <div class="form-group">
+    <label>Phone Number</label>
+    <input type="text" class="form-control" placeholder="Enter Phone Number" formControlName="phoneNumber">
+    <p *ngIf="createCustomer.controls.phoneNumber.errors?.required && createCustomer.controls.phoneNumber.touched"
+       class="text-danger">Vui long nhap!</p>
+  </div>
+  <div class="form-group">
+    <label>Email</label>
+    <input type="text" class="form-control" placeholder="Enter Email" formControlName="email">
+    <p *ngIf="createCustomer.controls.email.errors?.required && createCustomer.controls.email.touched"
+       class="text-danger">Vui long nhap!</p>
+  </div>
+  <div class="form-group">
+    <label>Address</label>
+    <input type="text" class="form-control" placeholder="Enter Address" formControlName="address">
+    <p *ngIf="createCustomer.controls.address.errors?.required && createCustomer.controls.address.touched"
+       class="text-danger">Vui long nhap!</p>
+  </div>
+  <div class="form-group">
+    <label>CustomerType</label>
+    <select formControlName="customerType">
+      <option *ngFor="let customerType of customerTypeList" [ngValue]="customerType"> {{customerType.name}} </option>
+    </select>
+    <p *ngIf="createCustomer.controls.customerType.errors?.required && createCustomer.controls.customerType.touched"
+       class="text-danger">Vui long nhap!</p>
+    <button type="submit" class="btn btn-primary" [disabled]="createCustomer.invalid">Update</button>
+  </div>
+</form>

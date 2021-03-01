@@ -1,0 +1,70 @@
+{
+  "customer": [
+    {
+      "name": "Hai",
+      "dateOfBirth": "2021-03-02",
+      "gender": "Male",
+      "idcard": "1",
+      "phoneNumber": "1",
+      "email": "2",
+      "address": "2",
+      "customerType": {
+        "name": "Pro",
+        "id": 2
+      },
+      "id": 16
+    },
+    {
+      "name": "1",
+      "dateOfBirth": "2021-03-09",
+      "gender": "Female",
+      "idcard": "1",
+      "phoneNumber": "1",
+      "email": "1",
+      "address": "1",
+      "customerType": {
+        "name": "Pro",
+        "id": 2
+      },
+      "id": 17
+    },
+    {
+      "name": "1",
+      "dateOfBirth": "2021-02-28T17:00:00.000Z",
+      "gender": "Female",
+      "idcard": "1",
+      "phoneNumber": "1",
+      "email": "1",
+      "address": "1",
+      "customerType": {
+        "name": "Vip",
+        "id": 1
+      },
+      "id": 19
+    },
+    {
+      "name": "d",
+      "dateOfBirth": "2021-02-28T17:00:00.000Z",
+      "gender": "Male",
+      "idcard": "1",
+      "phoneNumber": "1",
+      "email": "2",
+      "address": "2",
+      "customerType": {
+        "name": "Pro",
+        "id": 2
+      },
+      "id": 20
+    }
+  ],
+  "customerType": [
+    {
+      "name": "Vip",
+      "id": 1
+    },
+    {
+      "name": "Pro",
+      "id": 2
+    }
+  ]
+}
