@@ -27,19 +27,20 @@ export class ListComponent implements OnInit {
     this.customerService.getAllCustomerType().subscribe((data) => {
       this.customerTypeList = data;
     }, error => console.log(error));
+
     this.customerService.getCustomerList().subscribe((result) => {
       this.collection = result;
       console.log(this.collection);
     });
   }
 
-  deleteCustomer(customer, i) {
-    this.collection.this.collection.splice(i, 1);
-    this.customerService.deleteCustomer(customer.id).subscribe((result) => {
-      console.log('Data is Deleted Successfull !', result);
-      this.alert = true;
-    });
-  }
+  // deleteCustomer(customer, i) {
+  //   this.collection.this.collection.splice(i, 1);
+  //   this.customerService.deleteCustomer(customer.id).subscribe((result) => {
+  //     console.log('Data is Deleted Successfull !', result);
+  //     this.alert = true;
+  //   });
+  // }
 
   openDialog(customerId): void {
     this.customerService.getCurrentData(customerId).subscribe(customer => {
@@ -68,11 +69,15 @@ export class ListComponent implements OnInit {
       this.collection = customer;
     });
   }
-
-  search2(): void{
+  searchByName(): void{
     console.log(this.nameSearch);
+    this.customerService.findByName(this.nameSearch).subscribe(customer => {
+      this.collection = customer;
+    });
+  }
+  searchById(): void{
     console.log(this.idSearch);
-    this.customerService.findByName(this.nameSearch, this.idSearch).subscribe(customer => {
+    this.customerService.findById(this.idSearch).subscribe(customer => {
       this.collection = customer;
     });
   }

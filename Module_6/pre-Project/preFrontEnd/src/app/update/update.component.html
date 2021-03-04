@@ -1,0 +1,32 @@
+<h3>Update Users</h3>
+<div style="width: 400px;">
+  <form [formGroup]="updateUserList" (ngSubmit)="editUser()">
+    <div class="form-group">
+      <label >First Name</label>
+      <input type="text" class="form-control" formControlName="firstName">
+    </div>
+
+    <div class="form-group">
+      <label >Last Name</label>
+      <input type="text" class="form-control"  formControlName="lastName">
+    </div>
+
+    <div class="form-group">
+      <label>Email Id</label>
+      <input type="text" class="form-control" formControlName="email">
+    </div>
+    <div class="form-group">
+      <label>User Type</label>
+      <select formControlName="userType">
+        <option [selected]="userType.name == updateUserList.controls.userType.value.name"
+          *ngFor="let userType of userTypeList" [ngValue]="userType"> {{userType.name}} </option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+<div>
+  <h4>You submitted successfully!</h4>
+  <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+</div>

@@ -1,1 +1,95 @@
-<p>update works!</p>
+<div class="jumbotron">
+  <h1 class="text-center">Edit & Update Form</h1>
+</div>
+<div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Success !</strong> Your data Updated successfully !.
+  <button (click)=" closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<form [formGroup]="editSoTietKiem" (ngSubmit)="updateCustomer()" >
+  <div class="form-group">
+    <label>Id</label>
+    <input type="text" class="form-control"  formControlName="id" readonly>
+  </div>
+  <div class="form-group">
+    <label>Id Khach Hang</label>
+    <select formControlName="khachHang" disabled class="form-control">
+      <option [selected]="customerType.name == editSoTietKiem.controls.khachHang.value.name"
+              *ngFor="let customerType of customerTypeList" [ngValue]="customerType"> {{customerType.id}} </option>
+    </select>
+  </div>
+  <div class="form-group" >
+    <label>Ngay Mo So</label><br>
+    <mat-form-field>
+      <input [max]="maxDate" [min]="minDate" formControlName="ngayMoSo" matInput  style="color: black" readonly>
+    </mat-form-field>
+    <p *ngIf="editSoTietKiem.controls.ngayMoSo.errors?.required && editSoTietKiem.controls.ngayMoSo.touched"
+       class="text-danger">Vui long nhap!</p>
+  </div>
+
+  <div class="form-group">
+    <label>Ngay Gui</label><br>
+    <mat-form-field>
+      <input [min]="minDate" formControlName="ngayGui" matInput [matDatepicker]="myDatepicker1" style="color: black">
+      <mat-datepicker-toggle matSuffix [for]="myDatepicker1"></mat-datepicker-toggle>
+      <mat-datepicker #myDatepicker1></mat-datepicker>
+    </mat-form-field>
+    <p *ngIf="editSoTietKiem.controls.ngayGui.errors?.required && editSoTietKiem.controls.ngayGui.touched"
+       class="text-danger">Vui long nhap!</p>
+  </div>
+    <div class="form-group">
+      <label>Ky Han</label>
+      <select class="form-control" formControlName="ngayRut">
+        <option value="3 months">3 Thang</option>
+        <option value="6 months">6 Thang</option>
+        <option value="1 year">1 Nam</option>
+        <option value="5 years">5 Nam</option>
+        <option value="No Date">Khong Ky Han</option>
+      </select>
+      <p *ngIf="editSoTietKiem.controls.ngayRut.errors?.required && editSoTietKiem.controls.ngayRut.touched"
+         class="text-danger">Vui long nhap!</p>
+    </div>
+  <div class="form-group">
+    <label>So Tien Gui</label>
+    <input type="text" class="form-control" placeholder="Enter So Tien Gui" formControlName="soTien">
+    <p *ngIf="editSoTietKiem.controls.soTien.errors?.required && editSoTietKiem.controls.soTien.touched"
+       class="text-danger">Vui long nhap!</p>
+    <p *ngIf="editSoTietKiem.controls.soTien.errors?.min && editSoTietKiem.controls.soTien.touched"
+       class="text-danger">So tien gui phai lon hon 10 trieu!</p>
+    <p *ngIf="editSoTietKiem.controls.soTien.errors?.pattern && editSoTietKiem.controls.soTien.touched"
+       class="text-danger">VUi long nhap dung dinh dang!</p>
+  </div>
+  <div class="form-group">
+    <label>Lai Suat (0-9%)</label>
+    <input type="text" class="form-control" placeholder="Enter Address" formControlName="laiSuat">
+    <p *ngIf="editSoTietKiem.controls.laiSuat.errors?.required && editSoTietKiem.controls.laiSuat.touched"
+       class="text-danger">Vui long nhap!</p>
+    <p *ngIf="editSoTietKiem.controls.laiSuat.errors?.pattern && editSoTietKiem.controls.laiSuat.touched"
+       class="text-danger">VUi long nhap dung dinh dang!</p>
+  </div>
+  <div class="form-group">
+    <label>Ten Khach Hang</label>
+    <select formControlName="khachHang" disabled class="form-control">
+      <option [selected]="customerType.name == editSoTietKiem.controls.khachHang.value.name"
+              *ngFor="let customerType of customerTypeList" [ngValue]="customerType"> {{customerType.name}} </option>
+    </select>
+    <button type="submit" class="btn btn-primary" [disabled]="editSoTietKiem.invalid">Update</button>
+    <button  class="btn btn-outline-info" (click)="backList()">Back To List</button>
+  </div>
+</form>
+<!--<button class="btn btn-outline-danger" data-toggle="modal" data-target="#modalBack" >Back to List</button>-->
+
+<!--<div class="modal fade" id="modalBack" tabindex="-1" role="dialog" aria-hidden="true">-->
+<!--  <div class="modal-dialog" role="document">-->
+<!--    <div class="modal-content">-->
+<!--      <div class="modal-body">-->
+<!--        Do you want to Back to List Book ?-->
+<!--      </div>-->
+<!--      <div class="modal-footer">-->
+<!--        <button type="button" class="btn btn-outline-primary" data-dismiss="modal">No</button>-->
+<!--        <button type="button" class="btn btn-outline-danger" data-dismiss="modal" (click)="backList()">Yes</button>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->

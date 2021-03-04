@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a19e2818-5419-4cc6-b6db-a4d147f4c18c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../Module_4/pre/src/main/java/com/codegym/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Module_4/pre/src/main/java/com/codegym/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Module_1/4_Git_HTML/4_GitProject" beforeDir="false" afterPath="$PROJECT_DIR$/../../Module_1/4_Git_HTML/4_GitProject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Module_2/src/CaseStudy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Module_2/src/CaseStudy/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Module_4/_03_data_binding/thuc_hanh/UploadMultiFile/CGDN-Spring-UploadMultiFiles" beforeDir="false" afterPath="$PROJECT_DIR$/../../Module_4/_03_data_binding/thuc_hanh/UploadMultiFile/CGDN-Spring-UploadMultiFiles" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Module_5/thi_module5/thiModule5/server/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Module_5/thi_module5/thiModule5/server/db.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Module_5/thi_module5/thiModule5/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../Module_5/thi_module5/thiModule5/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Module_5/thi_module5/thiModule5/src/app/components/create/create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../Module_5/thi_module5/thiModule5/src/app/components/create/create.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Module_5/thi_module5/thiModule5/src/app/components/delete/delete.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../Module_5/thi_module5/thiModule5/src/app/components/delete/delete.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Module_5/thi_module5/thiModule5/src/app/components/delete/delete.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../Module_5/thi_module5/thiModule5/src/app/components/delete/delete.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Module_5/thi_module5/thiModule5/src/app/components/list/list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../Module_5/thi_module5/thiModule5/src/app/components/list/list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Module_5/thi_module5/thiModule5/src/app/components/list/list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../Module_5/thi_module5/thiModule5/src/app/components/list/list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Module_5/thi_module5/thiModule5/src/app/components/update/update.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../Module_5/thi_module5/thiModule5/src/app/components/update/update.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Module_5/thi_module5/thiModule5/src/app/components/update/update.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../Module_5/thi_module5/thiModule5/src/app/components/update/update.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Module_5/thi_module5/thiModule5/src/app/service/customer.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../Module_5/thi_module5/thiModule5/src/app/service/customer.service.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1pGp94oCrXEt042IPKWEcSi5mar" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Module_4/pre" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a19e2818-5419-4cc6-b6db-a4d147f4c18c" name="Default Changelist" comment="" />
+      <created>1614819126056</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1614819126056</updated>
+      <workItem from="1614819127415" duration="21000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="361" y="72" key="#Project_Structure" timestamp="1614819132402">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="72" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1614819132402" />
+    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1614819146721">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1614819146721" />
+  </component>
+</project>

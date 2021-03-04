@@ -8,39 +8,39 @@
   <h2>List Customers</h2>
   <div class="form-inline">
 
-    <input class="float-right" [(ngModel)]="nameSearch" placeholder="Search name ..."/>
-    <select [(ngModel)]="idSearch" #textSearch2>-->
-              <option value="">none</option>
-              <option *ngFor="let customerType of customerTypeList" [value]="customerType.name" > {{customerType.name}} </option>
-     </select>
-    <button class="float-right" (click)="search2()">Search</button>
+    <input class="float-right; form-control " [(ngModel)]="idSearch" placeholder="Search by Id ..."/>
+    <button class="float-right; btn btn-outline-info" (click)="searchById()">Search Id</button>
+
+    <input class="float-right; form-control" [(ngModel)]="nameSearch" placeholder="Search by Name ..."/>
+    <button class="float-right; btn btn-outline-info" (click)="searchByName()">Search Name</button>
+
 </div>
 <table class="table table-hover">
   <thead class="thead-dark">
   <tr>
-    <th scope="col">ID</th>
-    <th scope="col" (click)="sortByName()">Name</th>
-    <th scope="col">Date Of Birth</th>
-    <th scope="col">Gender</th>
-    <th scope="col">Id Card</th>
-    <th scope="col">Phone Number</th>
-    <th scope="col">Email</th>
-    <th scope="col">Address</th>
-    <th scope="col">Customer Type</th>
+    <th scope="col">ID So Tiet Kiem</th>
+    <th scope="col" (click)="sortByName()">ID Khach Hang</th>
+    <th scope="col">Ten Khach Hang</th>
+    <th scope="col">Ngay Mo So</th>
+    <th scope="col">Thoi Gian Bat Dau Gui</th>
+    <th scope="col">Ky Han</th>
+    <th scope="col">So Tien Gui</th>
+    <th scope="col">Lai Suat</th>
+    <th scope="col">Uu Dai</th>
     <th scope="col">Action</th>
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let customer of collection | paginate: { itemsPerPage:5, currentPage: p };  index as i">
     <td>{{customer.id}}</td>
-    <td>{{customer.name}}</td>
-    <td>{{customer.dateOfBirth}}</td>
-    <td>{{customer.gender}}</td>
-    <td>{{customer.idcard}}</td>
-    <td>{{customer.phoneNumber}}</td>
-    <td>{{customer.email}}</td>
-    <td>{{customer.address}}</td>
-    <td>{{customer.customerType.name}}</td>
+    <td>{{customer.khachHang.id}}</td>
+    <td>{{customer.khachHang.name}}</td>
+    <td>{{customer.ngayMoSo}}</td>
+    <td>{{customer.ngayGui}}</td>
+    <td>{{customer.ngayRut}}</td>
+    <td>{{customer.soTien}}</td>
+    <td>{{customer.laiSuat}}</td>
+    <td>{{customer.uuDai}}</td>
     <td><a routerLink="/update/{{customer.id}}">
       <i class="fa fa-edit" style="font-size:30px;color:rgb(10, 2, 116); cursor: pointer;"></i></a>&nbsp; &nbsp;
       <i (click)="openDialog(customer.id)" class="fa fa-trash-o" style="font-size:30px;color:red; cursor: pointer;"></i></td>

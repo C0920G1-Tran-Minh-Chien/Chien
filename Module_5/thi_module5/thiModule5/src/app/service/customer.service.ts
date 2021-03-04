@@ -5,8 +5,8 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
   providedIn: 'root'
 })
 export class CustomerService {
-  URL = 'http://localhost:3000/customer';
-  regURL = 'http://localhost:3000/customerType';
+  URL = 'http://localhost:3000/soTietKiem';
+  regURL = 'http://localhost:3000/khachHang';
   constructor(private _http: HttpClient) {
   }
   httpOptions = {
@@ -26,7 +26,7 @@ export class CustomerService {
   }
 
   deleteCustomer(id) {
-    return this._http.delete(this.URL + '/' + id);
+    return this._http.delete(this.URL + '/' +id);
   }
 
   getCurrentData(id) {
@@ -43,8 +43,11 @@ export class CustomerService {
   searchAll(keyword, keyword2){
     return this._http.get(this.URL+ '?name_like=' + keyword + '&customerType.name=' + keyword2, this.httpOptions);
   }
-  findByName(nameSearch: string, idSearch: string){
-    return this._http.get(this.URL + '?name_like=' + nameSearch + '&customerType.name_like=' + idSearch);
+  findById(idSearch: string){
+    return this._http.get(this.URL + '?id_like=' + idSearch);
+  }
+  findByName(nameSearch: string){
+    return this._http.get(this.URL + '?khachHang.name_like=' + nameSearch);
   }
   sortByName(order){
     return this._http.get(this.URL + '?_sort=name&_order=' + order);
