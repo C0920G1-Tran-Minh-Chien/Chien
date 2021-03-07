@@ -31,7 +31,7 @@ export class UserService {
     return this.http.get(this.userURL + id);
   }
   createUser(user){
-    return this.http.post(this.createURL, JSON.stringify(user), this.httpOptions )
+    return this.http.post(this.createURL, JSON.stringify(user), this.httpOptions)
   }
   updateUser(id, data){
     return this.http.put(this.userURL + id, data);

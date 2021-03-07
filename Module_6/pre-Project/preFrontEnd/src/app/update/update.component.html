@@ -22,7 +22,8 @@
           *ngFor="let userType of userTypeList" [ngValue]="userType"> {{userType.name}} </option>
       </select>
     </div>
-    <button type="submit" class="btn btn-success">Submit</button>
+    <button mat-dialog-close class="btn btn-warning mr-3"> Huy bo</button>
+    <button class="btn btn-danger mr-3" (click)="editUser()"> Edit</button>
   </form>
 </div>
 

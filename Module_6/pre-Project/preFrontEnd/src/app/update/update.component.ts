@@ -37,11 +37,14 @@ export class UpdateComponent implements OnInit {
       this.updateUserList.setValue(data);
     });
   }
+  // Chỉnh sửa User
   editUser(){
-    //Loi khong update dc type
+    //Loi khong update dc type, lấy về được userType thay đổi nhưng add vào hàm service k đổi.
     console.log(this.updateUserList.value);
     this.userService.updateUser(this.data.data2.id, this.updateUserList.value).subscribe(data => {
+      console.log(this.updateUserList.value);
       console.log(data, 'data updated successfull');
+      this.dialogRef.close();
       this.route.navigateByUrl('list');
     })
   }

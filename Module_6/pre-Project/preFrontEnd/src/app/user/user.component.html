@@ -20,9 +20,8 @@
           <td>{{user.userType.name}}</td>
           <td>
 <!--            <a routerLink="/update/{{user.id}}">-->
-<!--            <i class="fa fa-edit" style="font-size:30px;color:rgb(10, 2, 116); cursor: pointer;"></i></a>&nbsp; &nbsp;-->
-            <i (click)="openDialog(user.id)" class="fa fa-trash-o" style="font-size:30px;color:red; cursor: pointer;"></i>
-            <i (click)="openDialogUpdate(user.id)" class="fa fa-edit" style="font-size:30px;color:rgb(10, 2, 116); cursor: pointer;"></i>
+            <a (click)="openDialog(user.id)" class="btn btn-outline-info" style="font-size:30px;color:red; cursor: pointer;"> Xóa</a>
+            <a (click)="openDialogUpdate(user.id)" class="btn btn-outline-info" style="font-size:30px;color:rgb(10, 2, 116); cursor: pointer;">Update</a>
           </td>
         </tr>
         </tbody>

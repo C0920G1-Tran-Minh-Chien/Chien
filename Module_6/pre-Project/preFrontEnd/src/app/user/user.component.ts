@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from '../user';
 import {UserService} from '../user.service';
-import {UserType} from '../userType';
-import {error} from '@angular/compiler/src/util';
 import {DeleteComponent} from '../delete/delete.component';
 import {MatDialog} from '@angular/material/dialog';
 import {UpdateComponent} from '../update/update.component';
@@ -28,6 +26,7 @@ export class UserComponent implements OnInit {
       this.users = data;
     });
   }
+
   openDialog(userId): void {
     this.userService.getUserById(userId).subscribe(user => {
       const dialogRef = this.dialog.open(DeleteComponent, {
