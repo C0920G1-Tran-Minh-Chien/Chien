@@ -26,6 +26,12 @@
         </tr>
         </tbody>
       </table>
+      <hr>
+      <ul class="nav nav-pills">
+        <li class="nav-item" *ngFor="let p of pages; let i = index">
+          <a class="btn btn-outline-info" (click)="setPage(i, $event)">{{i}}</a>
+        </li>
+      </ul>
     </div>
   </div>
 </div>

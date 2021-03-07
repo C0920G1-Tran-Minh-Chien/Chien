@@ -3,9 +3,11 @@ package com.codegym.controller;
 import com.codegym.model.User;
 import com.codegym.model.UserType;
 import com.codegym.repository.UserRepository;
-import com.codegym.repository.UserTypeRepository;
 import com.codegym.service.UserTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -23,8 +25,8 @@ public class UserController {
     @Autowired
     UserTypeService userTypeService;
     @GetMapping("/users")
-    public List<User> getUsers() {
-        return this.userRepository.findAll();
+    public Page<User> getUsers(@RequestParam(defaultValue = "0") int page) {
+        return this.userRepository.findAll(PageRequest.of(page,3));
     }
 
 //    Lay List UserType

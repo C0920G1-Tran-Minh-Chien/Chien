@@ -18,8 +18,8 @@ export class UserService {
   };
   constructor(private http: HttpClient) { }
 
-  getUsers(){
-    return this.http.get(this.baseURL);
+  getUsers(page: number){
+    return this.http.get(this.baseURL + "?page=" + page);
   }
   getAllUserType(){
     return this.http.get(this.userTypeURL);

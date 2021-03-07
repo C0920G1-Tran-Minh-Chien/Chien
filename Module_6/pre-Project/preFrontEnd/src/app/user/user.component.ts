@@ -13,20 +13,37 @@ import {UpdateComponent} from '../update/update.component';
 export class UserComponent implements OnInit {
   userTypeList: any = [];
   users: User[];
+  page: number = 0;
+  pages: Array<number>;
   constructor(private userService: UserService,
               public dialog: MatDialog) { }
 
+
+  setPage(i, event: any){
+    this.page = i;
+    this.getUsers();
+  }
   ngOnInit(): void {
+   this.getUsers();
+  }
+
+  //Lấy về List
+  getUsers(){
+    //Lấy về userType
     this.userService.getAllUserType().subscribe(data => {
       this.userTypeList = data;
       console.log(this.userTypeList);
     },error => console.log(error));
-    this.userService.getUsers().subscribe((data: User[]) =>{
+
+    //Lấy về Users
+    this.userService.getUsers(this.page).subscribe((data: User[]) =>{
       console.log(data);
-      this.users = data;
+      this.users = data['content'];
+      this.pages = new Array<number>(data['totalPages']);
     });
   }
 
+  //Mở trang delete
   openDialog(userId): void {
     this.userService.getUserById(userId).subscribe(user => {
       const dialogRef = this.dialog.open(DeleteComponent, {
@@ -42,6 +59,7 @@ export class UserComponent implements OnInit {
     });
   }
 
+  //Mở trang Update
   openDialogUpdate(userId) {
     this.userService.getUserById(userId).subscribe(user => {
       const dialogRef = this.dialog.open(UpdateComponent, {
