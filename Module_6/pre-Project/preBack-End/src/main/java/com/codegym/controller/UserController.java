@@ -56,6 +56,7 @@ public class UserController {
         user.setFirstName(userDetails.getFirstName());
         user.setLastName(userDetails.getLastName());
         user.setEmail(userDetails.getEmail());
+        user.setImgUrl(userDetails.getImgUrl());
         user.setUserType(userDetails.getUserType());
         User updateUser = userRepository.save(user);
         return ResponseEntity.ok(updateUser);

@@ -17,6 +17,7 @@ export class UpdateComponent implements OnInit {
     firstName: new FormControl(''),
     lastName: new FormControl(''),
     email: new FormControl(''),
+    imgUrl: new FormControl(''),
     userType: new FormControl('')
   });
 

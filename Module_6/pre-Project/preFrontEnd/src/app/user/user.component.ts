@@ -27,7 +27,7 @@ export class UserComponent implements OnInit {
    this.getUsers();
   }
 
-  //Lấy về List
+  //Lấy về List Users
   getUsers(){
     //Lấy về userType
     this.userService.getAllUserType().subscribe(data => {

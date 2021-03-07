@@ -15,6 +15,7 @@ public class User {
     @Column(name = "last_name")
     private String lastName;
     private String email;
+    private String imgUrl;
 
     @ManyToOne
     @JoinColumn(name = "UserType_ID")
@@ -22,6 +23,14 @@ public class User {
 
 
     public User() {
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
     }
 
     public UserType getUserType() {

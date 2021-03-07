@@ -3,7 +3,25 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebaseConfig: {
+    // apiKey: "AIzaSyCEFCZ7DqSFXNM6xlnetku3dtX_2J_1BiU",
+    // authDomain: "miniproject-6d7af.firebaseapp.com",
+    // databaseURL: "https://miniproject-6d7af-default-rtdb.firebaseio.com",
+    // projectId: "miniproject-6d7af",
+    // storageBucket: "miniproject-6d7af.appspot.com",
+    // messagingSenderId: "586459104171",
+    // appId: "1:586459104171:web:f5989b11992d25bac588ee",
+    // measurementId: "G-PQ30ZNZBGR"
+    apiKey: "AIzaSyCEFCZ7DqSFXNM6xlnetku3dtX_2J_1BiU",
+    authDomain: "miniproject-6d7af.firebaseapp.com",
+    databaseURL: "https://miniproject-6d7af-default-rtdb.firebaseio.com",
+    projectId: "miniproject-6d7af",
+    storageBucket: "miniproject-6d7af.appspot.com",
+    messagingSenderId: "586459104171",
+    appId: "1:586459104171:web:f5989b11992d25bac588ee",
+    measurementId: "G-PQ30ZNZBGR"
+  }
 };
 
 /*

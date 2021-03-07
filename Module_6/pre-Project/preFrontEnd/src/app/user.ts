@@ -4,8 +4,9 @@ export class User {
   id: number;
   firstName: string;
   lastName: string;
-  email: string
-  userType: UserType
+  email: string;
+  imgUrl: string;
+  userType: UserType;
   constructor() {
   }
 }
