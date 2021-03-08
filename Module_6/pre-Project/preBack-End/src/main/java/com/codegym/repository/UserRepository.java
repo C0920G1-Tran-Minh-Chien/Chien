@@ -11,4 +11,13 @@ import java.util.List;
 public interface UserRepository extends JpaRepository<User, Long> {
     @Query("SELECT u FROM User u")
     List<User> findAll();
+
+    @Query("select u from User u where u.id = ?1")
+    User findById(long id);
+
+    @Query("delete  from User u where u.id = ?1")
+    Void deleteById(long id);
+
+//    @Query("insert into User")
+//    Void save(User user);
 }

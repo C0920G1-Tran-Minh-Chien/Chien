@@ -45,6 +45,7 @@ export class CreateComponent implements OnInit {
     });
   }
 
+  // Code upload anh len firebase nam trong onsubmit.
   onSubmit(formValue) {
     if (this.addUserList.valid) {
       console.log(this.selectImg);
@@ -55,7 +56,7 @@ export class CreateComponent implements OnInit {
         finalize(() => {
           fileRef.getDownloadURL().subscribe((url) => {
             formValue['imgUrl'] = url;
-            this.userService.insertImageDetails(formValue);
+            // this.userService.insertImageDetails(formValue);
           })
         })
       ).subscribe();
